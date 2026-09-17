@@ -1,0 +1,76 @@
+[
+  {
+    "id": "carta-pasante",
+    "title": "Carta de Pasante — Ingeniería en Mecatrónica",
+    "issuer": "Universidad Autónoma de la Laguna (UAL)",
+    "date": "2025-12-15",
+    "category": "educacion",
+    "file": "assets/documents/carta-pasante-mecatronica.pdf",
+    "thumb": "assets/thumbs/carta-pasante-mecatronica.jpg"
+  },
+  {
+    "id": "cert-competencias-profesionales",
+    "title": "Certificado de Competencias Profesionales",
+    "issuer": "Academia UAL",
+    "date": "2025-12-15",
+    "category": "certificacion",
+    "file": "assets/documents/certificado-competencias-profesionales-ual.pdf",
+    "thumb": "assets/thumbs/certificado-competencias-profesionales-ual.jpg"
+  },
+  {
+    "id": "cert-competencias-mecatronica",
+    "title": "Certificado de Competencias — Ingeniería Mecatrónica",
+    "issuer": "Academia de la Ingeniería en Mecatrónica, UAL",
+    "date": "2025-12-15",
+    "category": "certificacion",
+    "file": "assets/documents/certificado-competencias-mecatronica-ual.pdf",
+    "thumb": "assets/thumbs/certificado-competencias-mecatronica-ual.jpg"
+  },
+  {
+    "id": "cert-excel-tecmilenio",
+    "title": "Certificado Excel (100 horas)",
+    "issuer": "Skilling Center Tecmilenio",
+    "date": "2026-02-03",
+    "category": "curso",
+    "file": "assets/documents/certificado-excel-tecmilenio.pdf",
+    "thumb": "assets/thumbs/certificado-excel-tecmilenio.jpg"
+  },
+  {
+    "id": "microcredencial-chatgpt",
+    "title": "Microcredencial ChatGPT",
+    "issuer": "Skilling Center Tecmilenio",
+    "date": "2026-05-12",
+    "category": "curso",
+    "file": "assets/documents/microcredencial-chatgpt-tecmilenio.pdf",
+    "thumb": "assets/thumbs/microcredencial-chatgpt-tecmilenio.jpg"
+  },
+  {
+    "id": "excel-intermedio-cnecs",
+    "title": "Excel Intermedio (24 horas)",
+    "issuer": "CNECS — Sindicato Nacional de Trabajadores del IMSS",
+    "date": "2026-03-02",
+    "category": "curso",
+    "file": "assets/documents/constancia-excel-intermedio-cnecs.pdf",
+    "thumb": "assets/thumbs/constancia-excel-intermedio-cnecs.jpg"
+  },
+  {
+    "id": "electronica-basica-automotriz",
+    "title": "Electrónica Básica Automotriz",
+    "issuer": "CECATI",
+    "date": "2019-01-01",
+    "dateLabel": "2019",
+    "category": "curso",
+    "file": "assets/documents/constancia-electronica-basica-automotriz.pdf",
+    "thumb": "assets/thumbs/constancia-electronica-basica-automotriz.jpg"
+  },
+  {
+    "id": "bachillerato-tecnologico",
+    "title": "Bachillerato Tecnológico — Físico-Matemáticas / Computación",
+    "issuer": "Sistema Educativo Nacional",
+    "date": "2006-07-01",
+    "dateLabel": "2003 – 2006",
+    "category": "educacion",
+    "file": "assets/documents/bachillerato-tecnologico-certificado.pdf",
+    "thumb": "assets/thumbs/bachillerato-tecnologico-certificado.jpg"
+  }
+]
