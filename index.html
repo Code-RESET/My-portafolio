@@ -273,13 +273,13 @@
       <h2 class="section-title reveal">¿Tienes un proyecto en mente?</h2>
       <p class="section-text reveal">Disponible para proyectos de automatización, domótica, seguridad y soporte técnico.</p>
       <div class="contact-grid reveal">
-        <a class="contact-card" href="mailto:anngeldb@gmail.com">
+        <a class="contact-card" id="emailLink" href="#" data-user="anngeldb" data-domain="gmail.com" data-domain-tld="com">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
-          <span>anngeldb@gmail.com</span>
+          <span id="emailText">Correo electrónico</span>
         </a>
-        <a class="contact-card" href="tel:+528712318050">
+        <a class="contact-card" id="phoneLink" href="#" data-cc="52" data-num="8712318050" data-display="871 231 8050">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 0 0 6 6L15 14l5 2v4a2 2 0 0 1-2 2C10 22 2 14 2 6a2 2 0 0 1 2-2Z"/></svg>
-          <span>871 231 8050</span>
+          <span id="phoneText">Teléfono</span>
         </a>
         <a class="contact-card" href="https://www.linkedin.com/in/luisdiazbernal" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v5M8 8v.01M12 16v-3.2a1.8 1.8 0 0 1 3.6 0V16M12 16v-5"/></svg>
@@ -297,6 +297,7 @@
 
 <footer class="site-footer">
   <p>© <span id="year"></span> Luis Ángel Díaz Bernal · Región Laguna, Coahuila, México</p>
+  <p class="privacy-note">Este sitio muestra únicamente información profesional y académica. No se publican documentos de identidad, datos fiscales ni domicilio.</p>
 </footer>
 
 <!-- LIGHTBOX MODAL -->
@@ -327,6 +328,10 @@
     <div class="modal-header">
       <h3 id="uploadTitle">Agregar documento</h3>
       <p>Los archivos se guardan en este navegador. Para publicarlos de forma permanente para todos los visitantes, exporta el catálogo y súbelo al repositorio junto con el archivo.</p>
+      <div class="privacy-warning">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+        <p>No subas documentos de identidad ni con datos personales sensibles (CURP, RFC, actas, identificaciones oficiales, domicilio). Sube solo constancias, diplomas o certificados profesionales.</p>
+      </div>
     </div>
     <form id="uploadForm" class="upload-form">
       <label>
