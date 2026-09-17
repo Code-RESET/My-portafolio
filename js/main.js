@@ -4,7 +4,11 @@
   var STORAGE_THEME = "ldb_portfolio_theme";
   var STORAGE_DOCS = "ldb_portfolio_custom_docs";
   var STORAGE_HIDDEN = "ldb_portfolio_hidden_docs";
+  var STORAGE_EDITOR = "ldb_portfolio_editor_unlocked";
   var MAX_FILE_BYTES = 4 * 1024 * 1024;
+  var EDITOR_PASSPHRASE = "laguna2026";
+
+  var editorUnlocked = safeGet(STORAGE_EDITOR) === "1";
 
   document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -17,6 +21,39 @@
   var phoneLink = document.getElementById("phoneLink");
   phoneLink.href = "tel:+" + phoneLink.dataset.cc + phoneLink.dataset.num;
   document.getElementById("phoneText").textContent = phoneLink.dataset.display;
+
+  /* ---------- EDITOR MODE (only the owner can add/remove documents) ---------- */
+  var editorToggle = document.getElementById("editorToggle");
+  var editorToggleLabel = document.getElementById("editorToggleLabel");
+  var uploadCardEl = document.getElementById("openUpload");
+
+  function applyEditorState() {
+    editorToggle.classList.toggle("active", editorUnlocked);
+    editorToggleLabel.textContent = editorUnlocked ? "Modo edición: activo (salir)" : "Modo edición";
+    uploadCardEl.hidden = !editorUnlocked;
+  }
+
+  editorToggle.addEventListener("click", function () {
+    if (editorUnlocked) {
+      editorUnlocked = false;
+      safeSet(STORAGE_EDITOR, "0");
+      applyEditorState();
+      renderDocs();
+      return;
+    }
+    var attempt = window.prompt("Contraseña de edición:");
+    if (attempt === null) return;
+    if (attempt === EDITOR_PASSPHRASE) {
+      editorUnlocked = true;
+      safeSet(STORAGE_EDITOR, "1");
+      applyEditorState();
+      renderDocs();
+    } else {
+      window.alert("Contraseña incorrecta.");
+    }
+  });
+
+  applyEditorState();
 
   /* ---------- THEME ---------- */
   var root = document.documentElement;
@@ -156,17 +193,19 @@
       thumbWrap.appendChild(badge);
     }
 
-    var removeBtn = document.createElement("button");
-    removeBtn.type = "button";
-    removeBtn.className = "doc-remove";
-    removeBtn.setAttribute("aria-label", "Quitar documento");
-    removeBtn.title = "Quitar documento";
-    removeBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg>';
-    removeBtn.addEventListener("click", function (e) {
-      e.stopPropagation();
-      removeDocument(doc);
-    });
-    thumbWrap.appendChild(removeBtn);
+    if (editorUnlocked) {
+      var removeBtn = document.createElement("button");
+      removeBtn.type = "button";
+      removeBtn.className = "doc-remove";
+      removeBtn.setAttribute("aria-label", "Quitar documento");
+      removeBtn.title = "Quitar documento";
+      removeBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg>';
+      removeBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        removeDocument(doc);
+      });
+      thumbWrap.appendChild(removeBtn);
+    }
 
     card.appendChild(thumbWrap);
 
