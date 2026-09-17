@@ -607,6 +607,23 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-size: 12px;
   opacity: 0.75;
 }
+.editor-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  border: none;
+  background: none;
+  color: var(--text-soft);
+  font-size: 11px;
+  cursor: pointer;
+  opacity: 0.35;
+  transition: opacity 0.2s ease;
+}
+.editor-toggle:hover,
+.editor-toggle:focus-visible { opacity: 0.9; }
+.editor-toggle svg { width: 13px; height: 13px; }
+.editor-toggle.active { opacity: 0.9; color: var(--accent); }
 
 /* MODALS */
 .modal-backdrop {

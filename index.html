@@ -256,7 +256,7 @@
 
       <div class="doc-grid" id="docGrid"></div>
 
-      <div class="upload-card reveal" id="openUpload" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="upload-card reveal" id="openUpload" tabindex="0" role="button" aria-haspopup="dialog" hidden>
         <div class="upload-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
         </div>
@@ -298,6 +298,10 @@
 <footer class="site-footer">
   <p>© <span id="year"></span> Luis Ángel Díaz Bernal · Región Laguna, Coahuila, México</p>
   <p class="privacy-note">Este sitio muestra únicamente información profesional y académica. No se publican documentos de identidad, datos fiscales ni domicilio.</p>
+  <button type="button" class="editor-toggle" id="editorToggle" aria-label="Modo edición">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1.04 1.56V21a2 2 0 1 1-4 0v-.09A1.7 1.7 0 0 0 9 19.35a1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.65 15a1.7 1.7 0 0 0-1.56-1.04H3a2 2 0 1 1 0-4h.09A1.7 1.7 0 0 0 4.65 9a1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.65a1.7 1.7 0 0 0 1.04-1.56V3a2 2 0 1 1 4 0v.09A1.7 1.7 0 0 0 15 4.65a1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.35 9a1.7 1.7 0 0 0 1.56 1.04H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.51 1Z"/></svg>
+    <span id="editorToggleLabel">Modo edición</span>
+  </button>
 </footer>
 
 <!-- LIGHTBOX MODAL -->
