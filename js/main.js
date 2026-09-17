@@ -3,6 +3,7 @@
 
   var STORAGE_THEME = "ldb_portfolio_theme";
   var STORAGE_DOCS = "ldb_portfolio_custom_docs";
+  var STORAGE_HIDDEN = "ldb_portfolio_hidden_docs";
   var MAX_FILE_BYTES = 4 * 1024 * 1024;
 
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -65,9 +66,11 @@
   /* ---------- DOCUMENTS ---------- */
   var docGrid = document.getElementById("docGrid");
   var docFilters = document.getElementById("docFilters");
+  var hiddenNotice = document.getElementById("hiddenNotice");
   var activeFilter = "todos";
   var staticDocs = [];
   var customDocs = loadCustomDocs();
+  var hiddenIds = loadHiddenIds();
 
   fetch("data/documents.json")
     .then(function (res) { return res.ok ? res.json() : []; })
@@ -91,12 +94,33 @@
   });
 
   function renderDocs() {
-    var all = customDocs.concat(staticDocs);
+    var all = customDocs.concat(staticDocs).filter(function (d) { return hiddenIds.indexOf(d.id) === -1; });
     var filtered = activeFilter === "todos" ? all : all.filter(function (d) { return d.category === activeFilter; });
     docGrid.innerHTML = "";
     filtered.forEach(function (doc) {
       docGrid.appendChild(buildDocCard(doc));
     });
+    renderHiddenNotice();
+  }
+
+  function renderHiddenNotice() {
+    if (!hiddenIds.length) {
+      hiddenNotice.hidden = true;
+      hiddenNotice.innerHTML = "";
+      return;
+    }
+    hiddenNotice.hidden = false;
+    var label = hiddenIds.length === 1 ? "1 documento oculto" : hiddenIds.length + " documentos ocultos";
+    hiddenNotice.innerHTML = "<span>" + label + "</span>";
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = "Mostrar de nuevo";
+    btn.addEventListener("click", function () {
+      hiddenIds = [];
+      saveHiddenIds(hiddenIds);
+      renderDocs();
+    });
+    hiddenNotice.appendChild(btn);
   }
 
   function buildDocCard(doc) {
@@ -121,6 +145,19 @@
       badge.textContent = "Local";
       thumbWrap.appendChild(badge);
     }
+
+    var removeBtn = document.createElement("button");
+    removeBtn.type = "button";
+    removeBtn.className = "doc-remove";
+    removeBtn.setAttribute("aria-label", "Quitar documento");
+    removeBtn.title = "Quitar documento";
+    removeBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg>';
+    removeBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      removeDocument(doc);
+    });
+    thumbWrap.appendChild(removeBtn);
+
     card.appendChild(thumbWrap);
 
     var info = document.createElement("div");
@@ -133,6 +170,17 @@
 
     card.addEventListener("click", function () { openLightbox(doc); });
     return card;
+  }
+
+  function removeDocument(doc) {
+    if (doc.isLocal) {
+      customDocs = customDocs.filter(function (d) { return d.id !== doc.id; });
+      saveCustomDocs(customDocs);
+    } else if (hiddenIds.indexOf(doc.id) === -1) {
+      hiddenIds.push(doc.id);
+      saveHiddenIds(hiddenIds);
+    }
+    renderDocs();
   }
 
   function formatDate(iso) {
@@ -324,6 +372,15 @@
   }
   function saveCustomDocs(docs) {
     try { localStorage.setItem(STORAGE_DOCS, JSON.stringify(docs)); } catch (e) { /* storage unavailable or full */ }
+  }
+  function loadHiddenIds() {
+    try {
+      var raw = localStorage.getItem(STORAGE_HIDDEN);
+      return raw ? JSON.parse(raw) : [];
+    } catch (e) { return []; }
+  }
+  function saveHiddenIds(ids) {
+    try { localStorage.setItem(STORAGE_HIDDEN, JSON.stringify(ids)); } catch (e) { /* storage unavailable or full */ }
   }
   function safeGet(key) {
     try { return localStorage.getItem(key); } catch (e) { return null; }
