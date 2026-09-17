@@ -8,6 +8,16 @@
 
   document.getElementById("year").textContent = new Date().getFullYear();
 
+  /* ---------- CONTACT INFO (assembled at runtime to deter scraping) ---------- */
+  var emailLink = document.getElementById("emailLink");
+  var email = emailLink.dataset.user + "@" + emailLink.dataset.domain;
+  emailLink.href = "mailto:" + email;
+  document.getElementById("emailText").textContent = email;
+
+  var phoneLink = document.getElementById("phoneLink");
+  phoneLink.href = "tel:+" + phoneLink.dataset.cc + phoneLink.dataset.num;
+  document.getElementById("phoneText").textContent = phoneLink.dataset.display;
+
   /* ---------- THEME ---------- */
   var root = document.documentElement;
   var themeToggle = document.getElementById("themeToggle");
