@@ -22,6 +22,10 @@
   phoneLink.href = "tel:+" + phoneLink.dataset.cc + phoneLink.dataset.num;
   document.getElementById("phoneText").textContent = phoneLink.dataset.display;
 
+  var whatsappLink = document.getElementById("whatsappLink");
+  whatsappLink.href = "https://wa.me/" + whatsappLink.dataset.cc + whatsappLink.dataset.num +
+    "?text=" + encodeURIComponent(whatsappLink.dataset.msg);
+
   /* ---------- EDITOR MODE (only the owner can add/remove documents) ---------- */
   var editorToggle = document.getElementById("editorToggle");
   var editorToggleLabel = document.getElementById("editorToggleLabel");
