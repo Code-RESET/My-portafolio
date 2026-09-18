@@ -184,8 +184,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   min-height: 100svh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
   padding: 140px 24px 80px;
   max-width: 1120px;
   margin: 0 auto;
@@ -208,7 +206,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   50% { transform: translate(30px, -20px) scale(1.08); }
 }
 
-.hero-content { max-width: 600px; }
+.hero-content { max-width: 680px; }
 
 .eyebrow {
   color: var(--accent);
@@ -241,65 +239,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-
-.hero-avatar { flex-shrink: 0; position: relative; width: 220px; height: 220px; }
-
-.avatar-spin {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: conic-gradient(from 0deg, #2997ff, #7c5cff, #ff6482, #ffd60a, #2997ff);
-  box-shadow: var(--shadow-lg);
-  animation: avatarSpin 14s linear infinite;
-}
-@keyframes avatarSpin { to { transform: rotate(360deg); } }
-
-.avatar-core {
-  position: absolute;
-  inset: 8px;
-  border-radius: 50%;
-  background: var(--bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.avatar-watermark {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  color: var(--accent);
-  opacity: 0.16;
-}
-.avatar-initials {
-  position: relative;
-  font-size: 64px;
-  font-weight: 700;
-  background: linear-gradient(135deg, #2997ff, #7c5cff 50%, #ff6482);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-.avatar-badge {
-  position: absolute;
-  bottom: 2px;
-  right: 2px;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: var(--surface);
-  border: 4px solid var(--bg);
-  box-shadow: var(--shadow);
-  display: grid;
-  place-items: center;
-  color: var(--accent);
-}
-.avatar-badge svg { width: 24px; height: 24px; }
-
-@media (prefers-reduced-motion: reduce) {
-  .avatar-spin { animation: none; }
-}
 
 .scroll-cue {
   position: absolute;
@@ -821,10 +760,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   .nav-toggle { display: flex; }
   .hero { flex-direction: column; text-align: center; padding-top: 120px; }
   .hero-actions { justify-content: center; }
-  .hero-avatar { order: -1; width: 150px; height: 150px; }
-  .avatar-badge { width: 38px; height: 38px; }
-  .avatar-badge svg { width: 18px; height: 18px; }
-  .avatar-initials { font-size: 44px; }
   .skills-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .section { padding: 80px 20px; }
