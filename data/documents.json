@@ -64,16 +64,6 @@
     "thumb": "assets/thumbs/constancia-electronica-basica-automotriz.jpg"
   },
   {
-    "id": "bachillerato-tecnologico",
-    "title": "Bachillerato Tecnológico — Físico-Matemáticas / Computación",
-    "issuer": "Sistema Educativo Nacional",
-    "date": "2006-07-01",
-    "dateLabel": "2003 – 2006",
-    "category": "educacion",
-    "file": "assets/documents/bachillerato-tecnologico-certificado.pdf",
-    "thumb": "assets/thumbs/bachillerato-tecnologico-certificado.jpg"
-  },
-  {
     "id": "solidworks-cad-design-associate",
     "title": "SOLIDWORKS CAD Design Associate",
     "issuer": "Dassault Systèmes · Examen académico en UAL",
