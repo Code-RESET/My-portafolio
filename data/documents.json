@@ -72,5 +72,77 @@
     "category": "educacion",
     "file": "assets/documents/bachillerato-tecnologico-certificado.pdf",
     "thumb": "assets/thumbs/bachillerato-tecnologico-certificado.jpg"
+  },
+  {
+    "id": "solidworks-cad-design-associate",
+    "title": "SOLIDWORKS CAD Design Associate",
+    "issuer": "Dassault Systèmes · Examen académico en UAL",
+    "date": "2025-11-27",
+    "category": "certificacion",
+    "file": "assets/documents/solidworks-cad-design-associate.pdf",
+    "thumb": "assets/thumbs/solidworks-cad-design-associate.jpg"
+  },
+  {
+    "id": "reparacion-laptop-iaco",
+    "title": "Reparación de Laptop (36 horas)",
+    "issuer": "Instituto de Aprendizaje y Capacitación de Oficios de la Laguna (I.A.C.O.)",
+    "date": "2026-09-09",
+    "category": "curso",
+    "file": "assets/documents/reparacion-laptop-iaco.pdf",
+    "thumb": "assets/thumbs/reparacion-laptop-iaco.jpg"
+  },
+  {
+    "id": "fibra-de-carbono-moldes-infusion",
+    "title": "Curso de Moldes e Infusión de Fibra de Carbono",
+    "issuer": "H. Carbón",
+    "date": "2025-07-26",
+    "category": "curso",
+    "file": "assets/documents/fibra-de-carbono-moldes-infusion.pdf",
+    "thumb": "assets/thumbs/fibra-de-carbono-moldes-infusion.jpg"
+  },
+  {
+    "id": "circuitos-electronicos-fundamentales",
+    "title": "Comprobación de Circuitos Electrónicos Fundamentales (300 horas)",
+    "issuer": "SEP · CECATI 088",
+    "date": "2009-01-23",
+    "category": "curso",
+    "file": "assets/documents/circuitos-electronicos-fundamentales.pdf",
+    "thumb": "assets/thumbs/circuitos-electronicos-fundamentales.jpg"
+  },
+  {
+    "id": "reparacion-radio-am-fm",
+    "title": "Reparación de Radio AM y FM (300 horas)",
+    "issuer": "SEP · CECATI 088",
+    "date": "2009-07-03",
+    "category": "curso",
+    "file": "assets/documents/reparacion-radio-am-fm.pdf",
+    "thumb": "assets/thumbs/reparacion-radio-am-fm.jpg"
+  },
+  {
+    "id": "excel-cecati-2009",
+    "title": "Excel — CECATI",
+    "issuer": "SEP · CECATI 088",
+    "date": "2009-07-03",
+    "category": "curso",
+    "file": "assets/documents/excel-cecati-2009.pdf",
+    "thumb": "assets/thumbs/excel-cecati-2009.jpg"
+  },
+  {
+    "id": "windows-e-internet-cecati",
+    "title": "Windows e Internet",
+    "issuer": "SEP · CECATI 088",
+    "date": "2008-11-11",
+    "category": "curso",
+    "file": "assets/documents/windows-e-internet-cecati.pdf",
+    "thumb": "assets/thumbs/windows-e-internet-cecati.jpg"
+  },
+  {
+    "id": "mantenimiento-equipos-television",
+    "title": "Mantenimiento de Equipos Receptores de Televisión",
+    "issuer": "SEP · CECATI 088",
+    "date": "2010-02-11",
+    "category": "curso",
+    "file": "assets/documents/mantenimiento-equipos-television.pdf",
+    "thumb": "assets/thumbs/mantenimiento-equipos-television.jpg"
   }
 ]
