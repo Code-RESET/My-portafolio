@@ -2,6 +2,8 @@
 
 Sitio estático, estilo Apple, con perfil profesional, experiencia, habilidades, educación y documentos certificados (títulos, constancias y cursos).
 
+**Sitio en línea:** https://code-reset.github.io/My-portafolio/
+
 ## Estructura
 
 - `index.html` — página única con todas las secciones.
