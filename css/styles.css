@@ -410,6 +410,20 @@ ul { margin: 0; padding: 0; list-style: none; }
   color: var(--accent);
   font-weight: 700;
 }
+.complementary-list li.in-progress::before {
+  content: "○";
+  color: var(--text-soft);
+}
+.status-tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-soft);
+  background: var(--bg-alt);
+  border: 1px solid var(--surface-border);
+  border-radius: 980px;
+  padding: 2px 9px;
+  margin-left: 6px;
+}
 
 /* DOCUMENTS */
 .doc-filters { display: flex; gap: 10px; margin-bottom: 36px; flex-wrap: wrap; }
