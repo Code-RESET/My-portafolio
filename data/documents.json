@@ -54,6 +54,15 @@
     "thumb": "assets/thumbs/constancia-excel-intermedio-cnecs.jpg"
   },
   {
+    "id": "bachillerato-cetis59",
+    "title": "Certificado de Terminación de Estudios — Bachillerato Tecnológico",
+    "issuer": "SEP · CETIS 59",
+    "date": "2006-07-07",
+    "category": "educacion",
+    "file": "assets/documents/bachillerato-cetis59-terminacion-estudios.pdf",
+    "thumb": "assets/thumbs/bachillerato-cetis59-terminacion-estudios.jpg"
+  },
+  {
     "id": "electronica-basica-automotriz",
     "title": "Electrónica Básica Automotriz",
     "issuer": "CECATI",
