@@ -47,7 +47,7 @@
   {
     "id": "excel-intermedio-cnecs",
     "title": "Excel Intermedio (24 horas)",
-    "issuer": "CNECS — Sindicato Nacional de Trabajadores del IMSS",
+    "issuer": "CNECS",
     "date": "2026-03-02",
     "category": "curso",
     "file": "assets/documents/constancia-excel-intermedio-cnecs.pdf",
@@ -64,10 +64,9 @@
   },
   {
     "id": "electronica-basica-automotriz",
-    "title": "Electrónica Básica Automotriz",
-    "issuer": "CECATI",
-    "date": "2019-01-01",
-    "dateLabel": "2019",
+    "title": "Electrónica Básica Automotriz (50 horas)",
+    "issuer": "SEP · CECATI 20",
+    "date": "2019-11-23",
     "category": "curso",
     "file": "assets/documents/constancia-electronica-basica-automotriz.pdf",
     "thumb": "assets/thumbs/constancia-electronica-basica-automotriz.jpg"
