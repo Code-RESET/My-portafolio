@@ -618,6 +618,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .contact-card.whatsapp svg { color: #fff; }
 .contact-card.whatsapp:hover { background: #20bd5a; }
+.contact-card.catalog { grid-column: 1 / -1; justify-content: center; font-weight: 600; }
 
 /* FOOTER */
 .site-footer {
