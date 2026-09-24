@@ -331,6 +331,22 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .timeline-card h3 { margin: 0 0 4px; font-size: 1.2rem; }
 .timeline-org { color: var(--text-soft); font-size: 14px; margin: 0 0 16px; }
+.timeline-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.timeline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 980px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+.timeline-link:hover { transform: translateY(-2px); }
+.timeline-link svg { width: 15px; height: 15px; }
 .timeline-card ul { display: flex; flex-direction: column; gap: 8px; }
 .timeline-card li {
   font-size: 15px;
