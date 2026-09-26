@@ -76,9 +76,10 @@
   }
 
   /* ---------- DOCUMENTS ---------- */
+  var FEATURED_DOCS = 8;
   var docGrid = document.getElementById("docGrid");
-  var docFilters = document.getElementById("docFilters");
-  var activeFilter = "todos";
+  var docMore = document.getElementById("docMore");
+  var showAllDocs = false;
   var docs = [];
 
   fetch("data/documents.json")
@@ -92,22 +93,21 @@
       renderDocs();
     });
 
-  docFilters.addEventListener("click", function (e) {
-    var btn = e.target.closest(".filter-chip");
-    if (!btn) return;
-    activeFilter = btn.dataset.filter;
-    docFilters.querySelectorAll(".filter-chip").forEach(function (c) {
-      c.classList.toggle("active", c === btn);
-    });
+  docMore.addEventListener("click", function () {
+    showAllDocs = !showAllDocs;
     renderDocs();
+    if (!showAllDocs) document.getElementById("documentos").scrollIntoView();
   });
 
   function renderDocs() {
-    var filtered = activeFilter === "todos" ? docs : docs.filter(function (d) { return d.category === activeFilter; });
+    var visible = showAllDocs ? docs : docs.slice(0, FEATURED_DOCS);
     docGrid.innerHTML = "";
-    filtered.forEach(function (doc) {
+    visible.forEach(function (doc) {
       docGrid.appendChild(buildDocCard(doc));
     });
+    docMore.hidden = docs.length <= FEATURED_DOCS;
+    docMore.textContent = showAllDocs ? "Mostrar menos" : "Ver los " + docs.length + " documentos";
+    docMore.setAttribute("aria-expanded", String(showAllDocs));
   }
 
   function buildDocCard(doc) {
