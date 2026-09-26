@@ -45,6 +45,69 @@
     "thumb": "assets/thumbs/microcredencial-chatgpt-tecmilenio.jpg"
   },
   {
+    "id": "santander-ia-automatizacion-bots",
+    "title": "Crear valor con IA, automatización y bots (2 horas)",
+    "issuer": "Santander Open Academy",
+    "date": "2026-09-20",
+    "category": "curso",
+    "file": "assets/documents/santander-ia-automatizacion-bots.pdf",
+    "thumb": "assets/thumbs/santander-ia-automatizacion-bots.jpg"
+  },
+  {
+    "id": "santander-internet-de-las-cosas",
+    "title": "Internet de las Cosas (8 horas)",
+    "issuer": "Santander Open Academy · MIT Professional Education",
+    "date": "2026-03-06",
+    "category": "curso",
+    "file": "assets/documents/santander-internet-de-las-cosas.pdf",
+    "thumb": "assets/thumbs/santander-internet-de-las-cosas.jpg"
+  },
+  {
+    "id": "santander-copilot",
+    "title": "Copilot (8 horas)",
+    "issuer": "Santander Open Academy",
+    "date": "2026-03-04",
+    "category": "curso",
+    "file": "assets/documents/santander-copilot.pdf",
+    "thumb": "assets/thumbs/santander-copilot.jpg"
+  },
+  {
+    "id": "santander-fundamentos-chatgpt",
+    "title": "Fundamentos de ChatGPT (8 horas)",
+    "issuer": "Santander Open Academy",
+    "date": "2025-07-24",
+    "category": "curso",
+    "file": "assets/documents/santander-fundamentos-chatgpt.pdf",
+    "thumb": "assets/thumbs/santander-fundamentos-chatgpt.jpg"
+  },
+  {
+    "id": "santander-google-ia-productividad",
+    "title": "Google: Inteligencia Artificial y productividad (2 horas)",
+    "issuer": "Santander Open Academy · Google",
+    "date": "2025-06-07",
+    "category": "curso",
+    "file": "assets/documents/santander-google-ia-productividad.pdf",
+    "thumb": "assets/thumbs/santander-google-ia-productividad.jpg"
+  },
+  {
+    "id": "santander-prompting-responsable",
+    "title": "Prompting responsable: maximiza la IA en tu negocio (8 horas)",
+    "issuer": "Santander Open Academy · Microsoft & Founderz",
+    "date": "2025-06-06",
+    "category": "curso",
+    "file": "assets/documents/santander-prompting-responsable.pdf",
+    "thumb": "assets/thumbs/santander-prompting-responsable.jpg"
+  },
+  {
+    "id": "santander-excel",
+    "title": "Excel (8 horas)",
+    "issuer": "Santander Open Academy",
+    "date": "2025-06-04",
+    "category": "curso",
+    "file": "assets/documents/santander-excel.pdf",
+    "thumb": "assets/thumbs/santander-excel.jpg"
+  },
+  {
     "id": "excel-intermedio-cnecs",
     "title": "Excel Intermedio (24 horas)",
     "issuer": "CNECS",
