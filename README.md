@@ -36,3 +36,7 @@ No requiere build ni dependencias. Basta con abrir `index.html` en un navegador 
 ```bash
 python3 -m http.server 8000
 ```
+
+## Al publicar cambios de diseño
+
+`index.html` carga `css/styles.css?v=…` y `js/main.js?v=…`. Cambia ese número cada vez que modifiques el CSS o el JS para que los navegadores (sobre todo en celular) no usen la versión vieja guardada.

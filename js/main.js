@@ -81,7 +81,7 @@
   var showAllDocs = false;
   var docs = [];
 
-  fetch("data/documents.json")
+  fetch("data/documents.json", { cache: "no-cache" })
     .then(function (res) { return res.ok ? res.json() : []; })
     .then(function (data) {
       docs = data || [];
