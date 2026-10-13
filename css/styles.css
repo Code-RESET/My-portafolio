@@ -534,9 +534,11 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 22px;
-  margin-top: 16px;
+  margin-top: 40px;
 }
 .doc-more-wrap { text-align: center; margin-top: 32px; }
+.doc-toggle-wrap { margin-top: 8px; text-align: left; }
+.doc-grid[hidden] { display: none; }
 
 .doc-card {
   background: var(--surface);
@@ -674,9 +676,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 .modal-close svg { width: 16px; height: 16px; }
 .modal-header h3 { margin: 0 0 6px; font-size: 1.3rem; padding-right: 40px; }
 .modal-header p { margin: 0 0 20px; font-size: 14px; color: var(--text-soft); }
-.doc-modal .modal-body { border-radius: var(--radius-sm); overflow: hidden; background: var(--bg-alt); min-height: 60vh; }
-.doc-modal iframe { width: 100%; height: 60vh; border: none; display: block; }
-.modal-footer { margin-top: 20px; display: flex; justify-content: flex-end; }
+.doc-modal .modal-body { border-radius: var(--radius-sm); background: var(--bg-alt); max-height: 70vh; overflow-y: auto; }
+.doc-pages { display: flex; flex-direction: column; gap: 8px; }
+.doc-pages img, .doc-thumb img { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+.doc-pages img { width: 100%; height: auto; display: block; }
 
 /* REVEAL ANIMATION */
 .reveal {

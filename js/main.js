@@ -76,7 +76,6 @@
   }
 
   /* ---------- DOCUMENTS ---------- */
-  var FEATURED_DOCS = 8;
   var docGrid = document.getElementById("docGrid");
   var docMore = document.getElementById("docMore");
   var showAllDocs = false;
@@ -100,13 +99,15 @@
   });
 
   function renderDocs() {
-    var visible = showAllDocs ? docs : docs.slice(0, FEATURED_DOCS);
     docGrid.innerHTML = "";
-    visible.forEach(function (doc) {
-      docGrid.appendChild(buildDocCard(doc));
-    });
-    docMore.hidden = docs.length <= FEATURED_DOCS;
-    docMore.textContent = showAllDocs ? "Mostrar menos" : "Ver los " + docs.length + " documentos";
+    if (showAllDocs) {
+      docs.forEach(function (doc) {
+        docGrid.appendChild(buildDocCard(doc));
+      });
+    }
+    docGrid.hidden = !showAllDocs;
+    docMore.hidden = docs.length === 0;
+    docMore.textContent = showAllDocs ? "Ocultar documentos" : "Ver mis " + docs.length + " documentos";
     docMore.setAttribute("aria-expanded", String(showAllDocs));
   }
 
@@ -123,6 +124,7 @@
     img.src = doc.thumb;
     img.alt = "";
     img.loading = "lazy";
+    img.draggable = false;
     thumbWrap.appendChild(img);
     card.appendChild(thumbWrap);
 
@@ -156,10 +158,9 @@
 
   /* ---------- LIGHTBOX ---------- */
   var lightbox = document.getElementById("lightbox");
-  var lightboxFrame = document.getElementById("lightboxFrame");
+  var lightboxPages = document.getElementById("lightboxPages");
   var lightboxTitle = document.getElementById("lightboxTitle");
   var lightboxMeta = document.getElementById("lightboxMeta");
-  var lightboxDownload = document.getElementById("lightboxDownload");
   var lightboxClose = document.getElementById("lightboxClose");
   var lastFocused = null;
 
@@ -167,9 +168,15 @@
     lastFocused = document.activeElement;
     lightboxTitle.textContent = doc.title;
     lightboxMeta.textContent = doc.issuer + " · " + (doc.dateLabel || formatDate(doc.date));
-    lightboxFrame.src = doc.file;
-    lightboxDownload.href = doc.file;
-    lightboxDownload.setAttribute("download", (doc.title || "documento") + ".pdf");
+    lightboxPages.innerHTML = "";
+    (doc.pages || []).forEach(function (src, i) {
+      var page = document.createElement("img");
+      page.src = src;
+      page.alt = doc.title + (doc.pages.length > 1 ? " — página " + (i + 1) : "");
+      page.draggable = false;
+      lightboxPages.appendChild(page);
+    });
+    lightboxPages.scrollTop = 0;
     lightbox.classList.add("open");
     lightbox.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
@@ -180,7 +187,7 @@
     lightbox.classList.remove("open");
     lightbox.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
-    lightboxFrame.src = "";
+    lightboxPages.innerHTML = "";
     if (lastFocused) lastFocused.focus();
   }
 
@@ -188,6 +195,11 @@
   lightbox.addEventListener("click", function (e) { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
+  });
+
+  /* Documents are view-only: no context menu or dragging on their images */
+  [docGrid, lightboxPages].forEach(function (el) {
+    el.addEventListener("contextmenu", function (e) { e.preventDefault(); });
   });
 
   /* ---------- STORAGE HELPERS ---------- */

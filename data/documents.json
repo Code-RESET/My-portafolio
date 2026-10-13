@@ -5,7 +5,9 @@
     "issuer": "Dassault Systèmes · Examen académico en UAL",
     "date": "2025-11-27",
     "category": "certificacion",
-    "file": "assets/documents/solidworks-cad-design-associate.pdf",
+    "pages": [
+      "assets/docs-view/solidworks-cad-design-associate-1.jpg"
+    ],
     "thumb": "assets/thumbs/solidworks-cad-design-associate.jpg"
   },
   {
@@ -14,7 +16,9 @@
     "issuer": "Academia de la Ingeniería en Mecatrónica, UAL",
     "date": "2025-12-15",
     "category": "certificacion",
-    "file": "assets/documents/certificado-competencias-mecatronica-ual.pdf",
+    "pages": [
+      "assets/docs-view/certificado-competencias-mecatronica-ual-1.jpg"
+    ],
     "thumb": "assets/thumbs/certificado-competencias-mecatronica-ual.jpg"
   },
   {
@@ -23,7 +27,9 @@
     "issuer": "Academia UAL",
     "date": "2025-12-15",
     "category": "certificacion",
-    "file": "assets/documents/certificado-competencias-profesionales-ual.pdf",
+    "pages": [
+      "assets/docs-view/certificado-competencias-profesionales-ual-1.jpg"
+    ],
     "thumb": "assets/thumbs/certificado-competencias-profesionales-ual.jpg"
   },
   {
@@ -32,7 +38,9 @@
     "issuer": "Skilling Center Tecmilenio",
     "date": "2026-02-03",
     "category": "curso",
-    "file": "assets/documents/certificado-excel-tecmilenio.pdf",
+    "pages": [
+      "assets/docs-view/certificado-excel-tecmilenio-1.jpg"
+    ],
     "thumb": "assets/thumbs/certificado-excel-tecmilenio.jpg"
   },
   {
@@ -41,7 +49,9 @@
     "issuer": "Skilling Center Tecmilenio",
     "date": "2026-05-12",
     "category": "curso",
-    "file": "assets/documents/microcredencial-chatgpt-tecmilenio.pdf",
+    "pages": [
+      "assets/docs-view/microcredencial-chatgpt-tecmilenio-1.jpg"
+    ],
     "thumb": "assets/thumbs/microcredencial-chatgpt-tecmilenio.jpg"
   },
   {
@@ -50,7 +60,9 @@
     "issuer": "Santander Open Academy · MIT Professional Education",
     "date": "2026-03-06",
     "category": "curso",
-    "file": "assets/documents/santander-internet-de-las-cosas.pdf",
+    "pages": [
+      "assets/docs-view/santander-internet-de-las-cosas-1.jpg"
+    ],
     "thumb": "assets/thumbs/santander-internet-de-las-cosas.jpg"
   },
   {
@@ -59,7 +71,9 @@
     "issuer": "Santander Open Academy · Microsoft & Founderz",
     "date": "2025-06-06",
     "category": "curso",
-    "file": "assets/documents/santander-prompting-responsable.pdf",
+    "pages": [
+      "assets/docs-view/santander-prompting-responsable-1.jpg"
+    ],
     "thumb": "assets/thumbs/santander-prompting-responsable.jpg"
   },
   {
@@ -68,7 +82,9 @@
     "issuer": "SEP · CECATI 20",
     "date": "2019-11-23",
     "category": "curso",
-    "file": "assets/documents/constancia-electronica-basica-automotriz.pdf",
+    "pages": [
+      "assets/docs-view/constancia-electronica-basica-automotriz-1.jpg"
+    ],
     "thumb": "assets/thumbs/constancia-electronica-basica-automotriz.jpg"
   },
   {
@@ -77,7 +93,9 @@
     "issuer": "Santander Open Academy",
     "date": "2026-09-20",
     "category": "curso",
-    "file": "assets/documents/santander-ia-automatizacion-bots.pdf",
+    "pages": [
+      "assets/docs-view/santander-ia-automatizacion-bots-1.jpg"
+    ],
     "thumb": "assets/thumbs/santander-ia-automatizacion-bots.jpg"
   },
   {
@@ -86,7 +104,9 @@
     "issuer": "Santander Open Academy",
     "date": "2026-03-04",
     "category": "curso",
-    "file": "assets/documents/santander-copilot.pdf",
+    "pages": [
+      "assets/docs-view/santander-copilot-1.jpg"
+    ],
     "thumb": "assets/thumbs/santander-copilot.jpg"
   },
   {
@@ -95,7 +115,9 @@
     "issuer": "Instituto de Aprendizaje y Capacitación de Oficios de la Laguna (I.A.C.O.)",
     "date": "2026-09-09",
     "category": "curso",
-    "file": "assets/documents/reparacion-laptop-iaco.pdf",
+    "pages": [
+      "assets/docs-view/reparacion-laptop-iaco-1.jpg"
+    ],
     "thumb": "assets/thumbs/reparacion-laptop-iaco.jpg"
   },
   {
@@ -104,7 +126,9 @@
     "issuer": "H. Carbón",
     "date": "2025-07-26",
     "category": "curso",
-    "file": "assets/documents/fibra-de-carbono-moldes-infusion.pdf",
+    "pages": [
+      "assets/docs-view/fibra-de-carbono-moldes-infusion-1.jpg"
+    ],
     "thumb": "assets/thumbs/fibra-de-carbono-moldes-infusion.jpg"
   },
   {
@@ -113,7 +137,9 @@
     "issuer": "SEP · CETIS 59",
     "date": "2006-07-07",
     "category": "educacion",
-    "file": "assets/documents/bachillerato-cetis59-terminacion-estudios.pdf",
+    "pages": [
+      "assets/docs-view/bachillerato-cetis59-terminacion-estudios-1.jpg"
+    ],
     "thumb": "assets/thumbs/bachillerato-cetis59-terminacion-estudios.jpg"
   },
   {
@@ -122,7 +148,9 @@
     "issuer": "SEP · CECATI 088",
     "date": "2009-01-23",
     "category": "curso",
-    "file": "assets/documents/circuitos-electronicos-fundamentales.pdf",
+    "pages": [
+      "assets/docs-view/circuitos-electronicos-fundamentales-1.jpg"
+    ],
     "thumb": "assets/thumbs/circuitos-electronicos-fundamentales.jpg"
   }
 ]
