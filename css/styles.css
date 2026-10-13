@@ -537,6 +537,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .case-card--pair { grid-template-columns: minmax(0, 520px) 1fr; }
 .case-shots { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .case-shots img { width: 100%; display: block; border-radius: var(--radius-sm); }
+.case-shots--grid img { aspect-ratio: 1 / 1; object-fit: cover; }
 .case-shot { border-radius: var(--radius-md); overflow: hidden; background: var(--bg-alt); border: 1px solid var(--surface-border); }
 .case-shot img { width: 100%; max-height: 480px; object-fit: cover; object-position: top; display: block; }
 .case-info h3 { margin: 0 0 12px; font-size: 1.4rem; }
