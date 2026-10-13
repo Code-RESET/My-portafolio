@@ -445,6 +445,10 @@ ul { margin: 0; padding: 0; list-style: none; }
   padding: 32px;
   box-shadow: var(--shadow);
 }
+.case-card + .case-card { margin-top: 24px; }
+.case-card--pair { grid-template-columns: minmax(0, 520px) 1fr; }
+.case-shots { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.case-shots img { width: 100%; display: block; border-radius: var(--radius-sm); }
 .case-shot { border-radius: var(--radius-md); overflow: hidden; background: var(--bg-alt); border: 1px solid var(--surface-border); }
 .case-shot img { width: 100%; display: block; }
 .case-info h3 { margin: 0 0 12px; font-size: 1.4rem; }
@@ -704,7 +708,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .stat-row { grid-template-columns: repeat(2, 1fr); }
   .skills-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
-  .case-card { grid-template-columns: 1fr; gap: 24px; padding: 22px; }
+  .case-card, .case-card--pair { grid-template-columns: 1fr; gap: 24px; padding: 22px; }
   .project-shot { aspect-ratio: 1 / 1; }
   .section { padding: 80px 20px; }
   .timeline { padding-left: 24px; }
