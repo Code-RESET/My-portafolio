@@ -104,9 +104,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .nav-logo {
   font-weight: 700;
-  font-size: 17px;
-  letter-spacing: 0.02em;
+  font-size: 16px;
+  letter-spacing: -0.01em;
   margin-right: auto;
+  white-space: nowrap;
 }
 
 .nav-links {
@@ -645,7 +646,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .wa-grid { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 960px) {
   .nav-links {
     position: fixed;
     top: 60px;
@@ -663,6 +664,9 @@ ul { margin: 0; padding: 0; list-style: none; }
   }
   .nav-links.open { transform: translateY(0); }
   .nav-toggle { display: flex; }
+}
+
+@media (max-width: 720px) {
   .hero { flex-direction: column; text-align: center; padding-top: 120px; }
   .hero-actions { justify-content: center; }
   .stat-row { grid-template-columns: repeat(2, 1fr); }
