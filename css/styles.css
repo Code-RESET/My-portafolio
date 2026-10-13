@@ -413,6 +413,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .service-card h3 { margin: 0 0 10px; font-size: 1.2rem; }
 .service-card p:not(.service-kicker) { margin: 0 0 22px; font-size: 15px; line-height: 1.6; color: var(--text-soft); flex: 1; }
 .case-card { scroll-margin-top: 80px; }
+.more-work { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 14px; margin-top: 28px; text-align: center; }
+.more-work p { margin: 0; font-size: 15px; color: var(--text-soft); }
 
 /* PROJECTS */
 .projects-grid {
