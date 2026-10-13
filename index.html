@@ -537,12 +537,12 @@
     <div class="section-inner">
       <p class="section-kicker reveal">Respaldo</p>
       <h2 class="section-title reveal">Documentos y certificaciones</h2>
-      <p class="section-text reveal">Aquí están mis certificados y constancias escaneados. Puedes abrirlos o descargarlos. Tapé datos personales como el CURP.</p>
+      <p class="section-text reveal">Aquí están mis certificados y constancias escaneados. Se pueden ver, pero no descargar. Tapé datos personales como el CURP.</p>
 
-      <div class="doc-grid" id="docGrid"></div>
-      <div class="doc-more-wrap">
-        <button type="button" class="btn btn-secondary" id="docMore" aria-expanded="false" hidden></button>
+      <div class="doc-more-wrap doc-toggle-wrap reveal">
+        <button type="button" class="btn btn-primary" id="docMore" aria-expanded="false" aria-controls="docGrid">Ver documentos</button>
       </div>
+      <div class="doc-grid" id="docGrid" hidden></div>
     </div>
   </section>
 
@@ -611,12 +611,7 @@
       <h3 id="lightboxTitle"></h3>
       <p id="lightboxMeta"></p>
     </div>
-    <div class="modal-body">
-      <iframe id="lightboxFrame" title="Vista previa del documento"></iframe>
-    </div>
-    <div class="modal-footer">
-      <a id="lightboxDownload" class="btn btn-primary" download>Descargar PDF</a>
-    </div>
+    <div class="modal-body doc-pages" id="lightboxPages"></div>
   </div>
 </div>
 
