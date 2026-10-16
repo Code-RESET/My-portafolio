@@ -1,0 +1,111 @@
+[
+  {
+    "id": "finanzas-reset",
+    "name": "Finanzas Reset",
+    "tag": "App de finanzas personales",
+    "description": "Muestra lo que entró, lo que se gastó y lo que falta por pagar en el mes. Tiene cajas para separar el dinero, control de deudas, presupuesto por semana o mes, cuánto se puede gastar en los próximos días y el balance del mes en Excel.",
+    "stack": ["App web", "Exportación a Excel"],
+    "images": [
+      { "src": "assets/projects/finanzas-reset.jpg", "alt": "Menú de Finanzas Reset con cajas, movimientos, exportación a Excel, deudas, proyección de gasto y presupuesto" },
+      { "src": "assets/projects/finanzas-reset-login.jpg", "alt": "Pantalla de acceso de Finanzas Reset" }
+    ]
+  },
+  {
+    "id": "code-reset-gestion",
+    "name": "Code Reset — Panel de gestión",
+    "tag": "Gestión interna de proyectos y pagos",
+    "description": "Es el panel que uso para llevar code-RESET: clientes, proyectos, calendario de entregas (Gantt), cotizaciones, órdenes de compra, reportes, ingresos y lo que me falta por cobrar.",
+    "stack": ["App web", "Gestión de proyectos"],
+    "images": [
+      { "src": "assets/projects/code-reset-gestion.jpg", "alt": "Menú del panel de gestión interna de Code Reset con clientes, proyectos, Gantt, cotizaciones, órdenes de compra y reportes" },
+      { "src": "assets/projects/code-reset-dashboard.jpg", "alt": "Dashboard de Code Reset con ingresos, saldo pendiente, proyectos activos y clientes" }
+    ]
+  },
+  {
+    "id": "medicar",
+    "name": "Medicar",
+    "tag": "App privada de control financiero",
+    "description": "La hice para que un cliente lleve sus ingresos y gastos personales. Ve el resumen del mes, registra sus movimientos y entra con su usuario.",
+    "stack": ["Firebase Auth", "Firestore", "PWA"],
+    "images": [
+      { "src": "assets/projects/medicar-landing.jpg", "alt": "Pantalla de inicio de Medicar, app de control financiero personal" },
+      { "src": "assets/projects/medicar-login.jpg", "alt": "Pantalla de acceso de Medicar" }
+    ]
+  },
+  {
+    "id": "hernandez-autoclimas",
+    "name": "Hernández Autoclimas",
+    "tag": "Sistema administrativo para taller automotriz",
+    "description": "Sistema para un taller de clima y calefacción automotriz en Torreón, Coahuila: agenda, clientes, vehículos, órdenes de servicio, garantías, cotizaciones en PDF, pagos, catálogo y reportes. A octubre de 2026 el taller ya entregó 16 servicios registrados en la app.",
+    "stack": ["Firebase Auth", "Firestore", "PWA"],
+    "images": [
+      { "src": "assets/projects/autoclimas-menu.jpg", "alt": "Menú del sistema de Hernández Autoclimas con agenda, clientes, vehículos, órdenes, garantías, cotizaciones, pagos, catálogo y reportes" },
+      { "src": "assets/projects/autoclimas-servicios.jpg", "alt": "Gráfica de servicios por estado con 16 servicios entregados" },
+      { "src": "assets/projects/autoclimas-cotizacion.jpg", "alt": "Cotización en PDF generada por el sistema, con los datos del cliente tapados" },
+      { "src": "assets/projects/autoclimas-login.jpg", "alt": "Pantalla de acceso de Hernández Autoclimas" }
+    ]
+  },
+  {
+    "id": "reset-ordenes",
+    "name": "RESET — Control de Órdenes",
+    "tag": "Herramienta interna de gestión, v3.0",
+    "description": "Lo hice para mi negocio, Alarmas y GPS RESET. Con él llevo órdenes de servicio, cotizaciones y clientes, respaldo la información, la paso a Excel y la conecto con Microsoft 365.",
+    "stack": ["Firebase", "Firestore", "Microsoft 365"],
+    "images": [
+      { "src": "assets/projects/reset-ordenes.jpg", "alt": "Panel de Control de Órdenes de Alarmas y GPS RESET" }
+    ]
+  },
+  {
+    "id": "hd-credit",
+    "name": "HD Crédit",
+    "tag": "Control de cobros y cartera de crédito · v2.1",
+    "description": "Sistema para llevar créditos: cobros, acreditados con su historial, tabla de factores, morosos y recargos, reporte de cartera en Excel, exportación a CSV y respaldos. Los datos se guardan en la nube.",
+    "stack": ["Firebase", "Excel", "CSV"],
+    "images": [
+      { "src": "assets/projects/hdcredit-menu.jpg", "alt": "Menú de HD Crédit v2.1 con control de cobros, acreditados, historial, tabla de factores, reportes y exportación a Excel y CSV" },
+      { "src": "assets/projects/hdcredit-herramientas.jpg", "alt": "Herramientas de HD Crédit: tabla de factores, reportes, exportación, respaldos y morosos" },
+      { "src": "assets/projects/hdcredit-inicio.jpg", "alt": "Pantalla de carga de HD Crédit, sistema de control de pagos" }
+    ]
+  },
+  {
+    "id": "nenes-shopping",
+    "name": "Nene's Shopping USA",
+    "tag": "Control de cuentas y cuotas",
+    "description": "Para un negocio que vende en abonos: lleva las cuentas de cada cliente y sus pagos en cuotas. Se entra con usuario y contraseña.",
+    "stack": ["App web", "Acceso protegido"],
+    "images": [
+      { "src": "assets/projects/nenes-shopping.jpg", "alt": "Pantalla de acceso de Nene's Shopping USA, app de cuentas y cuotas" }
+    ]
+  },
+  {
+    "id": "pizzas-davids",
+    "name": "Pizzas David's",
+    "tag": "Control de ingresos con roles",
+    "description": "Para que el dueño de la pizzería vea en una sola pantalla las ventas, los gastos y la ganancia del día, del mes y del año. El dueño y los empleados entran con permisos distintos, y se instala en el celular.",
+    "stack": ["PWA instalable", "Roles de acceso"],
+    "images": [
+      { "src": "assets/projects/pizzas-davids.jpg", "alt": "Pantalla de acceso de Pizzas David's, app de control de ingresos" }
+    ]
+  },
+  {
+    "id": "rsti",
+    "name": "RSTI — App de estudio",
+    "tag": "Preparación para examen",
+    "description": "Una app para estudiar para el examen RSTI. Tiene quiz rápido de 10 preguntas, flashcards con repaso espaciado, simulacro de examen con tiempo, buscador y un apartado de datos duros. Muestra cuánto dominas del examen por módulo y lleva racha diaria y puntos de experiencia para estudiar todos los días.",
+    "stack": ["App web", "Quiz", "Flashcards", "Simulacro"],
+    "images": [
+      { "src": "assets/projects/rsti-estudio.jpg", "alt": "Pantalla de inicio de la app de estudio RSTI con el avance del examen, quiz rápido, flashcards, modo examen y datos duros" }
+    ]
+  },
+  {
+    "id": "lobitos",
+    "name": "Lobitos",
+    "tag": "App para el concurso LoboSabio",
+    "description": "Una app para dominar la guía del concurso LoboSabio. Tiene modo concurso con preguntas contra reloj y puntos por materia, y modo estudio con práctica, tarjetas y repaso de errores. Se contesta con opciones A·B·C o escribiendo la respuesta. Una pregunta queda dominada al contestarla bien dos veces seguidas, y la app muestra el avance de las 70 preguntas de la guía.",
+    "stack": ["App web", "Concurso contra reloj", "Modo estudio"],
+    "images": [
+      { "src": "assets/projects/lobitos-inicio.jpg", "alt": "Pantalla de inicio de Lobitos con el escudo del concurso LoboSabio, el avance de 70 preguntas y los modos concurso y estudio" },
+      { "src": "assets/projects/lobitos-pregunta.jpg", "alt": "Pregunta de matemáticas en el modo concurso de Lobitos, con opciones A, B y C" }
+    ]
+  }
+]
