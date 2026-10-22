@@ -69,7 +69,7 @@ def open_page(browser, base_url):
         page.on("requestfailed", lambda r: page.errors.append(f"failed: {r.url}"))
         page.on("response", lambda r: page.errors.append(f"http {r.status}: {r.url}") if r.status >= 400 else None)
         page.goto(base_url, wait_until="networkidle")
-        page.wait_for_selector("#appsGrid .project-card")
+        page.wait_for_selector("#appsGrid .project-card", state="attached")
         return page
 
     yield _open
