@@ -9,7 +9,10 @@ No necesita compilación: GitHub Pages publica los archivos tal cual.
 ## Estructura
 
 ```
-index.html              Página única. Las secciones están marcadas con <!-- NOMBRE -->.
+index.html              Página única. Orden: inicio (con los 3 servicios), Proyectos
+                        (pestañas Instalaciones / Aplicaciones), Testimonios,
+                        Sobre mí (pestañas Experiencia / Habilidades / Educación /
+                        Documentos) y Contacto. Cada parte está marcada con <!-- NOMBRE -->.
 css/styles.css          Diseño. El índice de secciones está al inicio del archivo.
 js/main.js              Punto de entrada: solo inicia los módulos.
 js/modules/
@@ -17,6 +20,8 @@ js/modules/
   theme.js              Modo claro / oscuro.
   nav.js                Menú superior y menú de celular.
   reveal.js             Animación de aparición al hacer scroll.
+  tabs.js               Pestañas. Un enlace a algo dentro de una pestaña (#documentos,
+                        #caso-minero…) abre esa pestaña solo.
   contact.js            Arma correo, teléfono y enlaces de WhatsApp.
   pagination.js         Paginación reutilizable (apps y documentos).
   viewer.js             Visor de imágenes: vista previa de apps y documentos.

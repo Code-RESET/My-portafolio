@@ -36,6 +36,7 @@ def test_apps_pagination(open_page, root):
     import json
     apps = json.loads((root / "data/apps.json").read_text(encoding="utf-8"))
     page = open_page()
+    page.click("#tab-proyectos")
     size = int(page.get_attribute("#appsGrid", "data-page-size"))
     pages = -(-len(apps) // size)
     assert page.locator("#appsGrid .project-card").count() == min(size, len(apps))
@@ -57,6 +58,7 @@ def test_every_app_preview_opens(open_page, root):
     import json
     apps = json.loads((root / "data/apps.json").read_text(encoding="utf-8"))
     page = open_page()
+    page.click("#tab-proyectos")
     size = int(page.get_attribute("#appsGrid", "data-page-size"))
     for i, app in enumerate(apps):
         page_no = i // size + 1
@@ -80,6 +82,7 @@ def test_every_app_preview_opens(open_page, root):
 
 def test_viewer_returns_focus_and_closes_on_backdrop(open_page):
     page = open_page()
+    page.click("#tab-proyectos")
     button = page.locator("#appsGrid .project-link").first
     button.click()
     assert page.evaluate("document.activeElement.id") == "viewerClose"
@@ -92,6 +95,7 @@ def test_documents_hidden_until_requested(open_page, root):
     import json
     docs = json.loads((root / "data/documents.json").read_text(encoding="utf-8"))
     page = open_page()
+    page.click("#tab-documentos")
     assert page.locator("#docGrid").is_hidden()
     assert page.locator("#docMore").inner_text() == f"Ver mis {len(docs)} documentos"
     page.click("#docMore")
@@ -114,6 +118,7 @@ def test_mobile_menu(open_page):
     page.click("#navToggle")
     assert page.get_attribute("#navToggle", "aria-expanded") == "true"
     page.click('#navLinks a[href="#contacto"]')
+    page.wait_for_timeout(100)
     assert page.get_attribute("#navToggle", "aria-expanded") == "false"
 
 
@@ -158,9 +163,50 @@ def test_accessibility_axe(open_page, root, scheme):
         pytest.skip("axe-core no instalado (npm install --prefix tests axe-core)")
     page = open_page(scheme=scheme)
     page.add_style_tag(content=".reveal{opacity:1!important;transform:none!important;transition:none!important}")
+    page.click("#tab-documentos")
     page.click("#docMore")
     page.add_script_tag(path=axe)
     result = page.evaluate("axe.run(document, {resultTypes: ['violations']})")
     problems = [f"{v['id']}: {[n['target'] for n in v['nodes'][:3]]}" for v in result["violations"]
                 if v["impact"] in ("serious", "critical")]
     assert problems == []
+
+
+def test_tabs_switch_panels_and_keyboard(open_page):
+    page = open_page()
+    assert page.get_attribute("#tab-instalaciones", "aria-selected") == "true"
+    assert page.locator("#instalaciones").is_visible() and page.locator("#proyectos").is_hidden()
+    page.click("#tab-proyectos")
+    assert page.locator("#proyectos").is_visible() and page.locator("#instalaciones").is_hidden()
+    page.focus("#tab-experiencia")
+    page.keyboard.press("ArrowRight")
+    assert page.get_attribute("#tab-habilidades", "aria-selected") == "true"
+    assert page.evaluate("document.activeElement.id") == "tab-habilidades"
+    page.keyboard.press("End")
+    assert page.locator("#documentos").is_visible()
+
+
+def test_page_does_not_jump_on_load(open_page):
+    for width in (390, 1440):
+        assert open_page(width).evaluate("window.scrollY") == 0
+
+
+@pytest.mark.parametrize("target", ["caso-minero", "caso-casa", "proyectos", "documentos", "educacion", "testimonios"])
+def test_deep_links_open_their_tab(browser, base_url, target):
+    """Old links like #documentos or #caso-minero must still land on the right place."""
+    ctx = browser.new_context(viewport={"width": 390, "height": 844})
+    page = ctx.new_page()
+    page.goto(base_url + "#" + target, wait_until="networkidle")
+    page.wait_for_timeout(900)
+    assert page.locator("#" + target).is_visible()
+    top = page.evaluate(f"document.getElementById('{target}').getBoundingClientRect().top")
+    assert 0 <= top < 844, f"#{target} quedó fuera de la pantalla (top={top})"
+    ctx.close()
+
+
+def test_in_page_links_to_tabs(open_page):
+    page = open_page(390)
+    page.click('.hero-tile[href="#proyectos"]')
+    page.wait_for_timeout(800)
+    assert page.get_attribute("#tab-proyectos", "aria-selected") == "true"
+    page.click('.timeline-link[href="#caso-minero"]', force=True) if page.locator('.timeline-link[href="#caso-minero"]').is_visible() else None

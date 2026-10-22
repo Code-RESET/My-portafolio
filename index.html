@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://code-reset.github.io/My-portafolio/assets/og-image.jpg">
 
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="css/styles.css?v=202610160406">
+<link rel="stylesheet" href="css/styles.css?v=202610220440">
 
 <script type="application/ld+json">
 {
@@ -55,14 +55,10 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#servicios">Qué hago</a></li>
-      <li><a href="#perfil">Perfil</a></li>
-      <li><a href="#experiencia">Experiencia</a></li>
-      <li><a href="#instalaciones">Instalaciones</a></li>
-      <li><a href="#habilidades">Habilidades</a></li>
-      <li><a href="#proyectos">Aplicaciones</a></li>
-      <li><a href="#educacion">Educación</a></li>
-      <li><a href="#documentos">Documentos</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#trabajo">Proyectos</a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
+      <li><a href="#perfil">Sobre mí</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
     <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
@@ -84,10 +80,15 @@
       <p class="hero-subtitle">Ingeniero Mecatrónico · Integración de Sistemas, Electrónica y Desarrollo de Soluciones Tecnológicas</p>
       <p class="hero-lede">Instalo alarmas y GPS, automatizo casas y hago apps para negocios. Me enfoco en diagnosticar fallas y en conectar lo físico con lo digital.</p>
       <div class="hero-actions">
-        <a href="#servicios" class="btn btn-primary">Qué hago</a>
+        <a href="#trabajo" class="btn btn-primary">Ver mi trabajo</a>
         <a href="#contacto" class="btn btn-secondary">Contactar</a>
         <a href="assets/documents/luis-diaz-bernal-cv.pdf" class="btn btn-ghost" download>Descargar CV</a>
       </div>
+      <nav class="hero-tiles" id="servicios" aria-label="Servicios">
+        <a class="hero-tile" href="#instalaciones"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg><strong>Alarmas y GPS</strong><span>Instalación y LED</span></a>
+        <a class="hero-tile" href="#caso-casa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-7h6v7"/></svg><strong>Domótica</strong><span>Casas inteligentes</span></a>
+        <a class="hero-tile" href="#proyectos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg><strong>Software</strong><span>Apps para negocios</span></a>
+      </nav>
     </div>
     <div class="hero-visual" aria-hidden="true" hidden>
       <figure class="hero-shot hero-shot--left">
@@ -103,319 +104,99 @@
         <figcaption>Apps para negocios</figcaption>
       </figure>
     </div>
-    <a href="#servicios" class="scroll-cue" aria-label="Desplazarse hacia abajo">
+    <a href="#trabajo" class="scroll-cue" aria-label="Desplazarse hacia abajo">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4v15M6 13l6 6 6-6"/></svg>
     </a>
   </section>
 
-  <!-- QUÉ HAGO -->
-  <section id="servicios" class="section alt">
+  <!-- PROYECTOS (pestañas: instalaciones y aplicaciones) -->
+  <section id="trabajo" class="section alt">
     <div class="section-inner">
-      <p class="section-kicker reveal">Qué hago</p>
-      <h2 class="section-title reveal">A qué me dedico</h2>
-      <div class="services-grid">
-        <article class="service-card reveal">
-          <div class="skill-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg>
-          </div>
-          <p class="service-kicker">Alarmas y GPS RESET</p>
-          <h3>Seguridad automotriz</h3>
-          <p>Instalo alarmas, GPS e iluminación LED en autos. Me dedico a esto desde 2009 y llevo más de 100 instalaciones.</p>
-          <a class="timeline-link" href="#instalaciones">Ver instalaciones <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </article>
-        <article class="service-card reveal">
-          <div class="skill-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-7h6v7"/></svg>
-          </div>
-          <p class="service-kicker">Tu Casa Inteligente</p>
-          <h3>Domótica</h3>
-          <p>Automatizo casas: luces, apagadores y aparatos que se controlan desde el celular o con Alexa.</p>
-          <a class="timeline-link" href="#caso-casa">Ver una casa automatizada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </article>
-        <article class="service-card reveal">
-          <div class="skill-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m9.5 9-2 1.5 2 1.5M14.5 9l2 1.5-2 1.5"/></svg>
-          </div>
-          <p class="service-kicker">code-RESET</p>
-          <h3>Apps y páginas web</h3>
-          <p>Hago apps a la medida para negocios: órdenes de servicio, cobranza, ventas y finanzas. Llevo <span data-count="apps">10</span> apps.</p>
-          <a class="timeline-link" href="#proyectos">Ver aplicaciones <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </article>
+      <p class="section-kicker reveal">Proyectos</p>
+      <h2 class="section-title reveal">Mi trabajo</h2>
+      <p class="section-text reveal">Trabajos reales con fotos, capturas y opiniones de mis clientes, publicados con su permiso.</p>
+
+      <div class="tabs" data-tabs>
+      <div class="tablist reveal" role="tablist" aria-label="Tipo de proyecto">
+        <button type="button" role="tab" class="tab" id="tab-instalaciones" aria-controls="instalaciones">Instalaciones <span class="tab-count">3</span></button>
+        <button type="button" role="tab" class="tab" id="tab-proyectos" aria-controls="proyectos">Aplicaciones <span class="tab-count" data-count="apps">10</span></button>
       </div>
-    </div>
-  </section>
-
-  <!-- PERFIL -->
-  <section id="perfil" class="section">
-    <div class="section-inner narrow">
-      <p class="section-kicker reveal">Perfil</p>
-      <h2 class="section-title reveal">Sobre mí</h2>
-      <p class="section-text reveal">Soy Ingeniero Mecatrónico con experiencia práctica en instalaciones eléctricas y electrónicas automotrices, sistemas de seguridad y rastreo GPS, domótica y desarrollo de aplicaciones para la gestión de negocios. Me enfoco en el diagnóstico de fallas, la integración de tecnologías y la creación de soluciones que conectan sistemas físicos con herramientas digitales.</p>
-      <p class="section-text reveal">Me dedico a la seguridad automotriz desde 2009 y llevo más de 100 instalaciones de alarmas y GPS, con muy pocas garantías y casi ninguna falla que se repita.</p>
-      <p class="section-text reveal">Hoy tengo tres negocios: <strong>Alarmas y GPS RESET</strong>, donde instalo alarmas, GPS e iluminación LED; <strong>Tu Casa Inteligente</strong>, donde automatizo casas; y <strong class="nowrap">code-RESET</strong>, donde hago apps y páginas web a la medida.</p>
-      <div class="stat-row reveal">
-        <div class="stat">
-          <span class="stat-number">10+</span>
-          <span class="stat-label">Años en seguridad automotriz</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">100+</span>
-          <span class="stat-label">Instalaciones de alarmas y GPS</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number" data-count="apps">10</span>
-          <span class="stat-label">Apps web desarrolladas</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number" data-count="docs">14</span>
-          <span class="stat-label">Documentos verificables</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCIA -->
-  <section id="experiencia" class="section alt">
-    <div class="section-inner">
-      <p class="section-kicker reveal">Trayectoria</p>
-      <h2 class="section-title reveal">Experiencia laboral</h2>
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-date">Actualidad</span>
-            <h3>Fundador · Desarrollador</h3>
-            <p class="timeline-org">code-RESET</p>
-            <ul>
-              <li>Hago aplicaciones y páginas web a la medida para negocios.</li>
-              <li>Llevo <span data-count="apps">10</span> apps: finanzas personales, presupuesto y deudas, créditos y cobranza, un taller automotriz, órdenes de servicio, ventas en abonos, ingresos de una pizzería, la gestión de mis propios proyectos, una app para estudiar para un examen y otra para preparar un concurso de preguntas.</li>
-            </ul>
-            <div class="timeline-links">
-              <a class="timeline-link" href="#proyectos">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                Ver aplicaciones
-              </a>
-            </div>
+      <div class="tabpanel" role="tabpanel" id="instalaciones" aria-labelledby="tab-instalaciones" tabindex="0">
+        <article class="case-card case-card--pair reveal" id="caso-tiida">
+          <div class="case-shots">
+            <img width="720" height="1176" src="assets/projects/tiida-antes.jpg" alt="Antes: alarma mal instalada en un Nissan Tiida, con cables sueltos, empalmes con cinta y el módulo colgando bajo el tablero" loading="lazy">
+            <img width="720" height="1176" src="assets/projects/tiida-despues.jpg" alt="Después: arnés nuevo de la alarma, agrupado y forrado, con el módulo listo para fijarse" loading="lazy">
           </div>
-        </div>
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-date">2019 — Actualidad</span>
-            <h3>Dueño · Ventas · Instalador</h3>
-            <p class="timeline-org">Alarmas y GPS RESET · Solo LED Auto</p>
-            <ul>
-              <li>Fundé el negocio en 2019. Instalo alarmas, GPS y sistemas de seguridad para vehículos.</li>
-              <li>Tengo dos líneas de iluminación LED: <strong>Solo LED Auto</strong>, para vehículos, y <strong>Minera LED Solutions</strong>, para minería.</li>
-              <li>Me encargo de todo: vendo, instalo, doy soporte y atiendo a los clientes.</li>
-              <li>Instalo GPS para que las empresas sepan dónde están sus vehículos.</li>
-              <li>Entre este negocio y Alarmas Resser llevo más de 100 instalaciones, con muy pocas garantías y fallas reportadas.</li>
-            </ul>
-            <div class="timeline-links">
-              <a class="timeline-link" href="https://code-reset.github.io/Site/" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
-                Sitio web de Alarmas y GPS RESET
-              </a>
-              <a class="timeline-link" href="https://www.facebook.com/share/1BoFfihjWY/" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8h2V4h-2.5A3.5 3.5 0 0 0 10 7.5V10H8v4h2v7h4v-7h2.2l.8-4H14V8.5a.5.5 0 0 1 .5-.5Z"/></svg>
-                Alarmas y GPS RESET en Facebook
-              </a>
-              <a class="timeline-link" href="https://www.facebook.com/share/1Be4MWs5gu/" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8h2V4h-2.5A3.5 3.5 0 0 0 10 7.5V10H8v4h2v7h4v-7h2.2l.8-4H14V8.5a.5.5 0 0 1 .5-.5Z"/></svg>
-                Solo LED Auto en Facebook
-              </a>
-              <a class="timeline-link" href="https://www.facebook.com/share/1HpNSt2PFw/" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8h2V4h-2.5A3.5 3.5 0 0 0 10 7.5V10H8v4h2v7h4v-7h2.2l.8-4H14V8.5a.5.5 0 0 1 .5-.5Z"/></svg>
-                Minera LED Solutions en Facebook
-              </a>
-              <a class="timeline-link" href="#caso-minero">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                Ver un trabajo de LED
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-date">Actualidad</span>
-            <h3>Fundador</h3>
-            <p class="timeline-org">Tu Casa Inteligente</p>
-            <ul>
-              <li>Automatizo casas para controlar luces, clima y seguridad.</li>
-              <li>Diseño e instalo cada sistema, desde la parte eléctrica hasta la electrónica.</li>
-            </ul>
-            <div class="timeline-links">
-              <a class="timeline-link" href="https://www.facebook.com/share/1HGwCEp49C/" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8h2V4h-2.5A3.5 3.5 0 0 0 10 7.5V10H8v4h2v7h4v-7h2.2l.8-4H14V8.5a.5.5 0 0 1 .5-.5Z"/></svg>
-                Tu Casa Inteligente en Facebook
-              </a>
-              <a class="timeline-link" href="https://www.facebook.com/share/v/1HAhtJ67kC/" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="m10 8.5 5.5 3.5-5.5 3.5Z"/></svg>
-                Ver video de una casa automatizada
-              </a>
-              <a class="timeline-link" href="#instalaciones">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                Ver una instalación
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <span class="timeline-date">2009 — 2019</span>
-            <h3>Líder Técnico en Sistemas de Seguridad Automotriz</h3>
-            <p class="timeline-org">Alarmas Resser de la Laguna</p>
-            <ul>
-              <li>Coordinaba al equipo de técnicos que instalaba alarmas y GPS.</li>
-              <li>Programaba módulos electrónicos y encontraba y reparaba fallas.</li>
-              <li>Mejoré la forma en que hacíamos las instalaciones y el servicio.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INSTALACIONES -->
-  <section id="instalaciones" class="section">
-    <div class="section-inner">
-      <p class="section-kicker reveal">Trabajo de campo</p>
-      <h2 class="section-title reveal">Instalaciones</h2>
-      <p class="section-text reveal">Trabajos reales, publicados con permiso de mis clientes.</p>
-
-      <article class="case-card case-card--pair reveal" id="caso-tiida">
-        <div class="case-shots">
-          <img width="720" height="1176" src="assets/projects/tiida-antes.jpg" alt="Antes: alarma mal instalada en un Nissan Tiida, con cables sueltos, empalmes con cinta y el módulo colgando bajo el tablero" loading="lazy">
-          <img width="720" height="1176" src="assets/projects/tiida-despues.jpg" alt="Después: arnés nuevo de la alarma, agrupado y forrado, con el módulo listo para fijarse" loading="lazy">
-        </div>
-        <div class="case-info">
-          <p class="project-tag">Alarmas y GPS RESET · Corrección de alarma</p>
-          <h3>Nissan Tiida</h3>
-          <p>El auto llegó con una alarma mal instalada: cables sueltos, empalmes con cinta y el módulo colgando debajo del tablero. Quité todo y armé un arnés nuevo, agrupado y forrado, con conectores, antes de volver a cerrar el tablero.</p>
-          <a class="timeline-link" href="https://www.facebook.com/share/1BoFfihjWY/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8h2V4h-2.5A3.5 3.5 0 0 0 10 7.5V10H8v4h2v7h4v-7h2.2l.8-4H14V8.5a.5.5 0 0 1 .5-.5Z"/></svg>
-            Ver más trabajos en Facebook
-          </a>
-        </div>
-      </article>
-
-      <article class="case-card case-card--pair reveal" id="caso-minero">
-        <div class="case-shots case-shots--grid">
-          <img width="640" height="640" src="assets/projects/led-minero-torreta.jpg" alt="Torreta LED ámbar, faro de trabajo y pértiga LED montados en el techo de una camioneta" loading="lazy">
-          <img width="640" height="640" src="assets/projects/led-minero-pertiga.jpg" alt="Pértiga LED encendida, atornillada al barandal con su conector" loading="lazy">
-          <img width="640" height="640" src="assets/projects/led-minero-panel.jpg" alt="Panel de interruptores con indicadores instalado bajo el tablero" loading="lazy">
-          <img width="640" height="640" src="assets/projects/led-minero-fusibles.jpg" alt="Caja de fusibles y relevadores para las luces, durante el cableado en el cofre" loading="lazy">
-        </div>
-        <div class="case-info">
-          <p class="project-tag">Minera LED Solutions · Equipamiento para mina</p>
-          <h3>Camionetas para trabajo en mina</h3>
-          <p>Equipo camionetas que entran a mina con iluminación de seguridad: torreta LED ámbar, pértiga con luz LED, faros de trabajo y un panel de interruptores en la cabina para controlar cada luz. Hago todo el cableado con su propia caja de fusibles y relevadores, para que cada circuito quede protegido.</p>
-          <a class="timeline-link" href="https://www.facebook.com/share/1HpNSt2PFw/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8h2V4h-2.5A3.5 3.5 0 0 0 10 7.5V10H8v4h2v7h4v-7h2.2l.8-4H14V8.5a.5.5 0 0 1 .5-.5Z"/></svg>
-            Ver más en Facebook
-          </a>
-        </div>
-      </article>
-
-      <article class="case-card reveal" id="caso-casa">
-        <div class="case-shot">
-          <img width="720" height="776" src="assets/projects/casa-alberto-app.jpg" alt="App de la casa de Alberto con los apagadores del patio, las luces LED de la cochera y un relevador inteligente" loading="lazy">
-        </div>
-        <div class="case-info">
-          <p class="project-tag">Tu Casa Inteligente · Domótica · Enero 2026</p>
-          <h3>Casa automatizada</h3>
-          <p>Instalé apagadores y relevadores inteligentes en la cocina, la escalera, la recámara, el patio y la cochera, y conecté el aire acondicionado. Mi cliente controla todo desde el celular o con Alexa.</p>
-          <div class="timeline-links case-links">
-            <a class="timeline-link" href="#testimonios">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3C7 3 3 6.6 3 11c0 2.2 1 4.1 2.6 5.5L5 21l4.8-1.9c.7.2 1.4.3 2.2.3 5 0 9-3.6 9-8S17 3 12 3Z"/></svg>
-              Ver la opinión de Alberto
+          <div class="case-info">
+            <p class="project-tag">Alarmas y GPS RESET · Corrección de alarma</p>
+            <h3>Nissan Tiida</h3>
+            <p>El auto llegó con una alarma mal instalada: cables sueltos, empalmes con cinta y el módulo colgando debajo del tablero. Quité todo y armé un arnés nuevo, agrupado y forrado, con conectores, antes de volver a cerrar el tablero.</p>
+            <a class="timeline-link" href="https://www.facebook.com/share/1BoFfihjWY/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8h2V4h-2.5A3.5 3.5 0 0 0 10 7.5V10H8v4h2v7h4v-7h2.2l.8-4H14V8.5a.5.5 0 0 1 .5-.5Z"/></svg>
+              Ver más trabajos en Facebook
             </a>
-          <a class="timeline-link" href="https://www.facebook.com/share/1HGwCEp49C/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8h2V4h-2.5A3.5 3.5 0 0 0 10 7.5V10H8v4h2v7h4v-7h2.2l.8-4H14V8.5a.5.5 0 0 1 .5-.5Z"/></svg>
-            Ver videos en Facebook
+          </div>
+        </article>
+
+        <article class="case-card case-card--pair reveal" id="caso-minero">
+          <div class="case-shots case-shots--grid">
+            <img width="640" height="640" src="assets/projects/led-minero-torreta.jpg" alt="Torreta LED ámbar, faro de trabajo y pértiga LED montados en el techo de una camioneta" loading="lazy">
+            <img width="640" height="640" src="assets/projects/led-minero-pertiga.jpg" alt="Pértiga LED encendida, atornillada al barandal con su conector" loading="lazy">
+            <img width="640" height="640" src="assets/projects/led-minero-panel.jpg" alt="Panel de interruptores con indicadores instalado bajo el tablero" loading="lazy">
+            <img width="640" height="640" src="assets/projects/led-minero-fusibles.jpg" alt="Caja de fusibles y relevadores para las luces, durante el cableado en el cofre" loading="lazy">
+          </div>
+          <div class="case-info">
+            <p class="project-tag">Minera LED Solutions · Equipamiento para mina</p>
+            <h3>Camionetas para trabajo en mina</h3>
+            <p>Equipo camionetas que entran a mina con iluminación de seguridad: torreta LED ámbar, pértiga con luz LED, faros de trabajo y un panel de interruptores en la cabina para controlar cada luz. Hago todo el cableado con su propia caja de fusibles y relevadores, para que cada circuito quede protegido.</p>
+            <a class="timeline-link" href="https://www.facebook.com/share/1HpNSt2PFw/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8h2V4h-2.5A3.5 3.5 0 0 0 10 7.5V10H8v4h2v7h4v-7h2.2l.8-4H14V8.5a.5.5 0 0 1 .5-.5Z"/></svg>
+              Ver más en Facebook
+            </a>
+          </div>
+        </article>
+
+        <article class="case-card reveal" id="caso-casa">
+          <div class="case-shot">
+            <img width="720" height="776" src="assets/projects/casa-alberto-app.jpg" alt="App de la casa de Alberto con los apagadores del patio, las luces LED de la cochera y un relevador inteligente" loading="lazy">
+          </div>
+          <div class="case-info">
+            <p class="project-tag">Tu Casa Inteligente · Domótica · Enero 2026</p>
+            <h3>Casa automatizada</h3>
+            <p>Instalé apagadores y relevadores inteligentes en la cocina, la escalera, la recámara, el patio y la cochera, y conecté el aire acondicionado. Mi cliente controla todo desde el celular o con Alexa.</p>
+            <div class="timeline-links case-links">
+              <a class="timeline-link" href="#testimonios">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3C7 3 3 6.6 3 11c0 2.2 1 4.1 2.6 5.5L5 21l4.8-1.9c.7.2 1.4.3 2.2.3 5 0 9-3.6 9-8S17 3 12 3Z"/></svg>
+                Ver la opinión de Alberto
+              </a>
+            <a class="timeline-link" href="https://www.facebook.com/share/1HGwCEp49C/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8h2V4h-2.5A3.5 3.5 0 0 0 10 7.5V10H8v4h2v7h4v-7h2.2l.8-4H14V8.5a.5.5 0 0 1 .5-.5Z"/></svg>
+              Ver videos en Facebook
+            </a>
+            </div>
+          </div>
+        </article>
+        <div class="more-work reveal">
+          <p>Video de otra casa que automaticé</p>
+          <a class="timeline-link" href="https://www.facebook.com/share/v/1HAhtJ67kC/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="m10 8.5 5.5 3.5-5.5 3.5Z"/></svg>
+            Ver video en Facebook
           </a>
-          </div>
-        </div>
-      </article>
-      <div class="more-work reveal">
-        <p>Video de otra casa que automaticé</p>
-        <a class="timeline-link" href="https://www.facebook.com/share/v/1HAhtJ67kC/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="m10 8.5 5.5 3.5-5.5 3.5Z"/></svg>
-          Ver video en Facebook
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- HABILIDADES -->
-  <section id="habilidades" class="section alt">
-    <div class="section-inner">
-      <p class="section-kicker reveal">Capacidades</p>
-      <h2 class="section-title reveal">Habilidades técnicas</h2>
-      <div class="skills-grid">
-        <div class="skill-card reveal">
-          <div class="skill-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg>
-          </div>
-          <h3>Seguridad automotriz &amp; GPS</h3>
-          <p>Alarmas, rastreo satelital GPS, inmovilizadores, sistemas por transpondedor e iluminación LED automotriz.</p>
-        </div>
-        <div class="skill-card reveal">
-          <div class="skill-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-7h6v7"/></svg>
-          </div>
-          <h3>Automatización &amp; Domótica</h3>
-          <p>Programo dispositivos y sensores para controlar luces, clima y seguridad en casas.</p>
-        </div>
-        <div class="skill-card reveal">
-          <div class="skill-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M13 6l-2 12"/></svg>
-          </div>
-          <h3>Desarrollo Web &amp; Software</h3>
-          <p>Hago apps y páginas web con <strong class="nowrap">code-RESET</strong>: con usuarios y contraseña, datos en la nube y que se pueden instalar en el celular.</p>
-        </div>
-        <div class="skill-card reveal">
-          <div class="skill-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>
-          </div>
-          <h3>Electricidad &amp; Electrónica</h3>
-          <p>Diagnóstico y reparación, media y baja tensión, integración de módulos electrónicos, PLC.</p>
-        </div>
-        <div class="skill-card reveal">
-          <div class="skill-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg>
-          </div>
-          <h3>Software &amp; Herramientas</h3>
-          <p>SolidWorks (tengo la certificación CAD Design Associate), Python básico, VBA, Office 365 y protocolos de comunicación.</p>
-        </div>
-        <div class="skill-card reveal">
-          <div class="skill-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 20v-1.6a3.4 3.4 0 0 0-3.4-3.4H6.4A3.4 3.4 0 0 0 3 18.4V20"/><circle cx="9.7" cy="8.5" r="3.5"/><path d="M21 20v-1.6a3.4 3.4 0 0 0-2.6-3.3"/><path d="M15.2 5.1a3.5 3.5 0 0 1 0 6.7"/></svg>
-          </div>
-          <h3>Ventas &amp; Negociación</h3>
-          <p>En mis negocios yo atiendo al cliente, cotizo y cierro la venta.</p>
         </div>
       </div>
-    </div>
-  </section>
+      <div class="tabpanel" role="tabpanel" id="proyectos" aria-labelledby="tab-proyectos" tabindex="0">
+        <p class="section-text reveal">Estas son apps que hice para clientes y para mis propios negocios. Funcionan en el navegador y varias se instalan en el celular. En las capturas no se ven datos de mis clientes.</p>
 
-  <!-- PROYECTOS -->
-  <section id="proyectos" class="section">
-    <div class="section-inner">
-      <p class="section-kicker reveal">code-RESET</p>
-      <h2 class="section-title reveal">Aplicaciones desarrolladas</h2>
-      <p class="section-text reveal">Estas son apps que hice para clientes y para mis propios negocios. Funcionan en el navegador y varias se instalan en el celular. En las capturas no se ven datos de mis clientes.</p>
-
-      <div class="projects-grid" id="appsGrid" data-page-size="6" aria-live="polite"></div>
-      <nav class="pagination" id="appsPagination" hidden></nav>
-      <noscript><p class="section-text">Activa JavaScript para ver las aplicaciones.</p></noscript>
+        <div class="projects-grid" id="appsGrid" data-page-size="6" aria-live="polite"></div>
+        <nav class="pagination" id="appsPagination" hidden></nav>
+        <noscript><p class="section-text">Activa JavaScript para ver las aplicaciones.</p></noscript>
+      </div>
+      </div>
     </div>
   </section>
 
   <!-- TESTIMONIOS -->
-  <section id="testimonios" class="section alt">
+  <section id="testimonios" class="section">
     <div class="section-inner">
       <p class="section-kicker reveal">Testimonios</p>
       <h2 class="section-title reveal">Lo que dicen mis clientes</h2>
@@ -461,56 +242,228 @@
     </div>
   </section>
 
-  <!-- EDUCACION -->
-  <section id="educacion" class="section">
-    <div class="section-inner narrow">
-      <p class="section-kicker reveal">Formación</p>
-      <h2 class="section-title reveal">Educación</h2>
-
-      <div class="edu-card reveal">
-        <div class="edu-head">
-          <h3>Ingeniería en Mecatrónica</h3>
-          <span class="edu-date">2022 — 2025</span>
-        </div>
-        <p class="edu-org">Universidad Autónoma de la Laguna (UAL)</p>
-        <p class="edu-desc">Titulado, con cédula profesional. En mi tesis, <em>«Propuesta e Implementación de Inmótica en la Facultad de Ingenierías»</em>, diseñé un sistema que automatiza la iluminación, el clima y la seguridad de la facultad para ahorrar energía.</p>
-      </div>
-
-      <div class="edu-card reveal">
-        <div class="edu-head">
-          <h3>Bachillerato Tecnológico</h3>
-          <span class="edu-date">2003 — 2006</span>
-        </div>
-        <p class="edu-org">Área Físico-Matemáticas · Carrera: Computación</p>
-        <p class="edu-desc">Ahí aprendí lo básico de programación, sistemas operativos, bases de datos y redes.</p>
-      </div>
-
-      <h3 class="sub-heading reveal">Formación complementaria</h3>
-      <ul class="complementary-list reveal">
-        <li class="in-progress">Ciberseguridad <span class="status-tag">en curso</span></li>
-        <li>SOLIDWORKS CAD Design Associate — Dassault Systèmes</li>
-        <li>Excel (100 horas) y Microcredencial ChatGPT — Skilling Center Tecmilenio</li>
-        <li>Reparación de Laptop (36 horas) — I.A.C.O.</li>
-        <li>Moldes e Infusión de Fibra de Carbono — H. Carbón</li>
-        <li>Electrónica automotriz y circuitos electrónicos — SEP · CECATI</li>
-        <li>4 cursos de IA e IoT — Santander Open Academy, con contenido de MIT Professional Education y Microsoft &amp; Founderz</li>
-      </ul>
-      <p class="complementary-note reveal">Las constancias están en <a href="#documentos">Documentos</a>.</p>
-    </div>
-  </section>
-
-  <!-- DOCUMENTOS -->
-  <section id="documentos" class="section alt">
+  <!-- SOBRE MÍ (perfil + pestañas: experiencia, habilidades, educación, documentos) -->
+  <section id="perfil" class="section alt">
     <div class="section-inner">
-      <p class="section-kicker reveal">Respaldo</p>
-      <h2 class="section-title reveal">Documentos y certificaciones</h2>
-      <p class="section-text reveal">Aquí están mis certificados y constancias escaneados. Se pueden ver, pero no descargar. Tapé datos personales como el CURP.</p>
-
-      <div class="doc-more-wrap doc-toggle-wrap reveal">
-        <button type="button" class="btn btn-primary" id="docMore" aria-expanded="false" aria-controls="docGrid">Ver mis <span data-count="docs">14</span> documentos</button>
+      <p class="section-kicker reveal">Perfil</p>
+      <h2 class="section-title reveal">Sobre mí</h2>
+      <div class="about-intro">
+        <p class="section-text reveal">Soy Ingeniero Mecatrónico con experiencia práctica en instalaciones eléctricas y electrónicas automotrices, sistemas de seguridad y rastreo GPS, domótica y desarrollo de aplicaciones para la gestión de negocios. Me enfoco en el diagnóstico de fallas, la integración de tecnologías y la creación de soluciones que conectan sistemas físicos con herramientas digitales.</p>
+        <p class="section-text reveal">Me dedico a la seguridad automotriz desde 2009 y llevo más de 100 instalaciones de alarmas y GPS, con muy pocas garantías y casi ninguna falla que se repita.</p>
+        <p class="section-text reveal">Hoy tengo tres negocios: <strong>Alarmas y GPS RESET</strong>, donde instalo alarmas, GPS e iluminación LED; <strong>Tu Casa Inteligente</strong>, donde automatizo casas; y <strong class="nowrap">code-RESET</strong>, donde hago apps y páginas web a la medida.</p>
+        <div class="stat-row reveal">
+          <div class="stat">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Años en seguridad automotriz</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">100+</span>
+            <span class="stat-label">Instalaciones de alarmas y GPS</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-count="apps">10</span>
+            <span class="stat-label">Apps web desarrolladas</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-count="docs">14</span>
+            <span class="stat-label">Documentos verificables</span>
+          </div>
+        </div>
       </div>
-      <div class="doc-grid" id="docGrid" data-page-size="8" hidden></div>
-      <nav class="pagination" id="docPagination" hidden></nav>
+
+      <div class="tabs about-tabs" data-tabs>
+      <div class="tablist reveal" role="tablist" aria-label="Más sobre mí">
+        <button type="button" role="tab" class="tab" id="tab-experiencia" aria-controls="experiencia">Experiencia</button>
+        <button type="button" role="tab" class="tab" id="tab-habilidades" aria-controls="habilidades">Habilidades</button>
+        <button type="button" role="tab" class="tab" id="tab-educacion" aria-controls="educacion">Educación</button>
+        <button type="button" role="tab" class="tab" id="tab-documentos" aria-controls="documentos">Documentos</button>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="experiencia" aria-labelledby="tab-experiencia" tabindex="0">
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">Actualidad</span>
+              <h3>Fundador · Desarrollador</h3>
+              <p class="timeline-org">code-RESET</p>
+              <ul>
+                <li>Hago aplicaciones y páginas web a la medida para negocios.</li>
+                <li>Llevo <span data-count="apps">10</span> apps: finanzas personales, presupuesto y deudas, créditos y cobranza, un taller automotriz, órdenes de servicio, ventas en abonos, ingresos de una pizzería, la gestión de mis propios proyectos, una app para estudiar para un examen y otra para preparar un concurso de preguntas.</li>
+              </ul>
+              <div class="timeline-links">
+                <a class="timeline-link" href="#proyectos">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  Ver aplicaciones
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2019 — Actualidad</span>
+              <h3>Dueño · Ventas · Instalador</h3>
+              <p class="timeline-org">Alarmas y GPS RESET · Solo LED Auto</p>
+              <ul>
+                <li>Fundé el negocio en 2019. Instalo alarmas, GPS y sistemas de seguridad para vehículos.</li>
+                <li>Tengo dos líneas de iluminación LED: <strong>Solo LED Auto</strong>, para vehículos, y <strong>Minera LED Solutions</strong>, para minería.</li>
+                <li>Me encargo de todo: vendo, instalo, doy soporte y atiendo a los clientes.</li>
+                <li>Instalo GPS para que las empresas sepan dónde están sus vehículos.</li>
+                <li>Entre este negocio y Alarmas Resser llevo más de 100 instalaciones, con muy pocas garantías y fallas reportadas.</li>
+              </ul>
+              <div class="timeline-links">
+                <a class="timeline-link" href="https://code-reset.github.io/Site/" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+                  Sitio web de Alarmas y GPS RESET
+                </a>
+                <a class="timeline-link" href="https://www.facebook.com/share/1BoFfihjWY/" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8h2V4h-2.5A3.5 3.5 0 0 0 10 7.5V10H8v4h2v7h4v-7h2.2l.8-4H14V8.5a.5.5 0 0 1 .5-.5Z"/></svg>
+                  Alarmas y GPS RESET en Facebook
+                </a>
+                <a class="timeline-link" href="https://www.facebook.com/share/1Be4MWs5gu/" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8h2V4h-2.5A3.5 3.5 0 0 0 10 7.5V10H8v4h2v7h4v-7h2.2l.8-4H14V8.5a.5.5 0 0 1 .5-.5Z"/></svg>
+                  Solo LED Auto en Facebook
+                </a>
+                <a class="timeline-link" href="https://www.facebook.com/share/1HpNSt2PFw/" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8h2V4h-2.5A3.5 3.5 0 0 0 10 7.5V10H8v4h2v7h4v-7h2.2l.8-4H14V8.5a.5.5 0 0 1 .5-.5Z"/></svg>
+                  Minera LED Solutions en Facebook
+                </a>
+                <a class="timeline-link" href="#caso-minero">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  Ver un trabajo de LED
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">Actualidad</span>
+              <h3>Fundador</h3>
+              <p class="timeline-org">Tu Casa Inteligente</p>
+              <ul>
+                <li>Automatizo casas para controlar luces, clima y seguridad.</li>
+                <li>Diseño e instalo cada sistema, desde la parte eléctrica hasta la electrónica.</li>
+              </ul>
+              <div class="timeline-links">
+                <a class="timeline-link" href="https://www.facebook.com/share/1HGwCEp49C/" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8h2V4h-2.5A3.5 3.5 0 0 0 10 7.5V10H8v4h2v7h4v-7h2.2l.8-4H14V8.5a.5.5 0 0 1 .5-.5Z"/></svg>
+                  Tu Casa Inteligente en Facebook
+                </a>
+                <a class="timeline-link" href="https://www.facebook.com/share/v/1HAhtJ67kC/" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="m10 8.5 5.5 3.5-5.5 3.5Z"/></svg>
+                  Ver video de una casa automatizada
+                </a>
+                <a class="timeline-link" href="#instalaciones">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  Ver una instalación
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-date">2009 — 2019</span>
+              <h3>Líder Técnico en Sistemas de Seguridad Automotriz</h3>
+              <p class="timeline-org">Alarmas Resser de la Laguna</p>
+              <ul>
+                <li>Coordinaba al equipo de técnicos que instalaba alarmas y GPS.</li>
+                <li>Programaba módulos electrónicos y encontraba y reparaba fallas.</li>
+                <li>Mejoré la forma en que hacíamos las instalaciones y el servicio.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="habilidades" aria-labelledby="tab-habilidades" tabindex="0">
+        <div class="skills-grid">
+          <div class="skill-card reveal">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3>Seguridad automotriz &amp; GPS</h3>
+            <p>Alarmas, rastreo satelital GPS, inmovilizadores, sistemas por transpondedor e iluminación LED automotriz.</p>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-7h6v7"/></svg>
+            </div>
+            <h3>Automatización &amp; Domótica</h3>
+            <p>Programo dispositivos y sensores para controlar luces, clima y seguridad en casas.</p>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M13 6l-2 12"/></svg>
+            </div>
+            <h3>Desarrollo Web &amp; Software</h3>
+            <p>Hago apps y páginas web con <strong class="nowrap">code-RESET</strong>: con usuarios y contraseña, datos en la nube y que se pueden instalar en el celular.</p>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>
+            </div>
+            <h3>Electricidad &amp; Electrónica</h3>
+            <p>Diagnóstico y reparación, media y baja tensión, integración de módulos electrónicos, PLC.</p>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg>
+            </div>
+            <h3>Software &amp; Herramientas</h3>
+            <p>SolidWorks (tengo la certificación CAD Design Associate), Python básico, VBA, Office 365 y protocolos de comunicación.</p>
+          </div>
+          <div class="skill-card reveal">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 20v-1.6a3.4 3.4 0 0 0-3.4-3.4H6.4A3.4 3.4 0 0 0 3 18.4V20"/><circle cx="9.7" cy="8.5" r="3.5"/><path d="M21 20v-1.6a3.4 3.4 0 0 0-2.6-3.3"/><path d="M15.2 5.1a3.5 3.5 0 0 1 0 6.7"/></svg>
+            </div>
+            <h3>Ventas &amp; Negociación</h3>
+            <p>En mis negocios yo atiendo al cliente, cotizo y cierro la venta.</p>
+          </div>
+        </div>
+      </div>
+      <div class="tabpanel panel-narrow" role="tabpanel" id="educacion" aria-labelledby="tab-educacion" tabindex="0">
+
+        <div class="edu-card reveal">
+          <div class="edu-head">
+            <h3>Ingeniería en Mecatrónica</h3>
+            <span class="edu-date">2022 — 2025</span>
+          </div>
+          <p class="edu-org">Universidad Autónoma de la Laguna (UAL)</p>
+          <p class="edu-desc">Titulado, con cédula profesional. En mi tesis, <em>«Propuesta e Implementación de Inmótica en la Facultad de Ingenierías»</em>, diseñé un sistema que automatiza la iluminación, el clima y la seguridad de la facultad para ahorrar energía.</p>
+        </div>
+
+        <div class="edu-card reveal">
+          <div class="edu-head">
+            <h3>Bachillerato Tecnológico</h3>
+            <span class="edu-date">2003 — 2006</span>
+          </div>
+          <p class="edu-org">Área Físico-Matemáticas · Carrera: Computación</p>
+          <p class="edu-desc">Ahí aprendí lo básico de programación, sistemas operativos, bases de datos y redes.</p>
+        </div>
+
+        <h3 class="sub-heading reveal">Formación complementaria</h3>
+        <ul class="complementary-list reveal">
+          <li class="in-progress">Ciberseguridad <span class="status-tag">en curso</span></li>
+          <li>SOLIDWORKS CAD Design Associate — Dassault Systèmes</li>
+          <li>Excel (100 horas) y Microcredencial ChatGPT — Skilling Center Tecmilenio</li>
+          <li>Reparación de Laptop (36 horas) — I.A.C.O.</li>
+          <li>Moldes e Infusión de Fibra de Carbono — H. Carbón</li>
+          <li>Electrónica automotriz y circuitos electrónicos — SEP · CECATI</li>
+          <li>4 cursos de IA e IoT — Santander Open Academy, con contenido de MIT Professional Education y Microsoft &amp; Founderz</li>
+        </ul>
+        <p class="complementary-note reveal">Las constancias están en <a href="#documentos">Documentos</a>.</p>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="documentos" aria-labelledby="tab-documentos" tabindex="0">
+        <p class="section-text reveal">Aquí están mis certificados y constancias escaneados. Se pueden ver, pero no descargar. Tapé datos personales como el CURP.</p>
+
+        <div class="doc-more-wrap doc-toggle-wrap reveal">
+          <button type="button" class="btn btn-primary" id="docMore" aria-expanded="false" aria-controls="docGrid">Ver mis <span data-count="docs">14</span> documentos</button>
+        </div>
+        <div class="doc-grid" id="docGrid" data-page-size="8" hidden></div>
+        <nav class="pagination" id="docPagination" hidden></nav>
+      </div>
+      </div>
     </div>
   </section>
 
@@ -590,6 +543,6 @@
   </div>
 </div>
 
-<script type="module" src="js/main.js?v=202610160406"></script>
+<script type="module" src="js/main.js?v=202610220440"></script>
 </body>
 </html>
