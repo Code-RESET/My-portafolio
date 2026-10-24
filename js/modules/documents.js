@@ -1,8 +1,8 @@
 /* "Documentos y certificaciones": hidden until the visitor asks for them,
    paginated, and shown only as images (no download). Data: data/documents.json */
-import { escapeHtml, fetchJSON, formatMonth, setCount, scrollToSection } from "./utils.js?v=202610220440";
-import { paginate, renderPagination } from "./pagination.js?v=202610220440";
-import { openViewer } from "./viewer.js?v=202610220440";
+import { escapeHtml, fetchJSON, formatMonth, setCount, scrollToSection } from "./utils.js?v=202610241644";
+import { paginate, renderPagination } from "./pagination.js?v=202610241644";
+import { openViewer } from "./viewer.js?v=202610241644";
 
 export function initDocuments() {
   var section = document.getElementById("documentos");

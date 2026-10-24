@@ -1,8 +1,8 @@
 /* "Aplicaciones desarrolladas": cards are built from data/apps.json.
    To add an app, add an entry to that file (see README). */
-import { escapeHtml, fetchJSON, setCount, scrollToSection } from "./utils.js?v=202610220440";
-import { paginate, renderPagination } from "./pagination.js?v=202610220440";
-import { openViewer } from "./viewer.js?v=202610220440";
+import { escapeHtml, fetchJSON, setCount, scrollToSection } from "./utils.js?v=202610241644";
+import { paginate, renderPagination } from "./pagination.js?v=202610241644";
+import { openViewer } from "./viewer.js?v=202610241644";
 
 var EYE_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>';
 var STACK_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 15 5-5 4 4 3-3 6 6"/></svg>';
