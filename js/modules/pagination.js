@@ -3,7 +3,7 @@
    paginate(items, page, size)  -> { items, page, pages }
    renderPagination(nav, { page, pages, label, onChange })
 */
-import { escapeHtml } from "./utils.js?v=202610220440";
+import { escapeHtml } from "./utils.js?v=202610310102";
 
 export function paginate(items, page, size) {
   var pages = Math.max(1, Math.ceil(items.length / size));

@@ -210,3 +210,41 @@ def test_in_page_links_to_tabs(open_page):
     page.wait_for_timeout(800)
     assert page.get_attribute("#tab-proyectos", "aria-selected") == "true"
     page.click('.timeline-link[href="#caso-minero"]', force=True) if page.locator('.timeline-link[href="#caso-minero"]').is_visible() else None
+
+
+def test_tab_bar_shows_more_content_arrow_on_small_screens(open_page):
+    page = open_page(390)
+    wrap = page.locator("#perfil .tablist-wrap")
+    assert "more-right" in wrap.get_attribute("class")
+    page.click("#perfil .tab-scroll-right")
+    page.wait_for_timeout(600)
+    assert "more-left" in wrap.get_attribute("class")
+    assert "more-right" not in page.locator("#trabajo .tablist-wrap").get_attribute("class")
+
+
+def test_panel_pager_moves_between_tabs(open_page):
+    page = open_page()
+    page.click("#instalaciones .tab-pager-next")
+    assert page.get_attribute("#tab-proyectos", "aria-selected") == "true"
+    page.click("#proyectos .tab-pager-prev")
+    assert page.get_attribute("#tab-instalaciones", "aria-selected") == "true"
+    assert page.locator("#documentos .tab-pager-next").count() == 0
+
+
+def test_links_show_where_they_go(open_page):
+    page = open_page()
+    external = page.locator("a.is-external")
+    assert external.count() >= 10
+    for link in external.all():
+        assert link.locator(".ext-icon").count() == 1
+        assert link.get_attribute("target") == "_blank" and "noopener" in link.get_attribute("rel")
+    hrefs = page.evaluate("[...document.querySelectorAll('a[href^=\"http\"]')].map(a => a.className)")
+    assert all("is-external" in c for c in hrefs), "Hay enlaces a otros sitios sin marcar"
+
+
+def test_chat_captures_open_in_viewer(open_page):
+    page = open_page()
+    page.locator("#testimonios a.is-preview").first.click()
+    assert "open" in page.get_attribute("#viewer", "class")
+    assert "Conversación original" in page.locator("#viewerTitle").inner_text()
+    assert len(page.context.pages) == 1
