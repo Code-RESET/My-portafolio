@@ -790,6 +790,7 @@ button.project-shot:focus-visible, .page-btn:focus-visible, .viewer-nav:focus-vi
 .case-shot img { width: 100%; max-height: 480px; object-fit: cover; object-position: top; display: block; }
 .case-info h3 { margin: 0 0 12px; font-size: 1.4rem; }
 .case-info > p:not(.project-tag) { margin: 0 0 20px; font-size: 15px; line-height: 1.6; color: var(--text-soft); }
+.case-facts { margin: 0; padding-left: 18px; list-style: disc; display: grid; gap: 8px; font-size: 14px; line-height: 1.55; color: var(--text-soft); }
 
 /* EDUCATION */
 .edu-card {

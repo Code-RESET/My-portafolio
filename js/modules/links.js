@@ -4,7 +4,7 @@
    - Links to an image on this site (chat captures) open in the in-page
      viewer instead of leaving the page.
    Runs after contact.js, which builds the WhatsApp links. */
-import { openViewer } from "./viewer.js?v=202610310102";
+import { openViewer } from "./viewer.js?v=202610310105";
 
 var EXTERNAL_ICON = '<svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
 
