@@ -1,5 +1,5 @@
 /* Light / dark theme toggle. Remembers the choice in this browser. */
-import { safeGet, safeSet } from "./utils.js?v=202610220440";
+import { safeGet, safeSet } from "./utils.js?v=202610310102";
 
 var STORAGE_KEY = "ldb_portfolio_theme";
 
