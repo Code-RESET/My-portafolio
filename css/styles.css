@@ -849,6 +849,7 @@ button.project-shot:focus-visible, .page-btn:focus-visible, .viewer-nav:focus-vi
 .doc-more-wrap { text-align: center; margin-top: 32px; }
 .doc-toggle-wrap { margin-top: 8px; text-align: left; }
 .doc-grid[hidden] { display: none; }
+.load-error { flex: 1 1 100%; grid-column: 1 / -1; text-align: center; color: var(--text-soft); font-size: 15px; padding: 24px 0; }
 
 .doc-card {
   width: 100%;

@@ -9,13 +9,26 @@ export function escapeHtml(value) {
     .replace(/'/g, "&#39;");
 }
 
-/* Loads a JSON file from /data. Returns [] if it is missing or broken,
-   so one bad file never breaks the rest of the page. */
+/* Loads a JSON file from /data. Returns null if it is missing or broken,
+   so one bad file never breaks the rest of the page; the caller shows
+   a message with showLoadError(). */
 export function fetchJSON(url) {
   return fetch(url, { cache: "no-cache" })
-    .then(function (res) { return res.ok ? res.json() : []; })
-    .then(function (data) { return Array.isArray(data) ? data : []; })
-    .catch(function () { return []; });
+    .then(function (res) { return res.ok ? res.json() : null; })
+    .then(function (data) { return Array.isArray(data) ? data : null; })
+    .catch(function () { return null; });
+}
+
+/* Visible notice when a section could not load its data. */
+export function showLoadError(el, text) {
+  if (!el) return;
+  var p = document.createElement("p");
+  p.className = "load-error";
+  p.setAttribute("role", "status");
+  p.textContent = text + " Recarga la página o escríbeme por WhatsApp.";
+  el.innerHTML = "";
+  el.hidden = false;
+  el.appendChild(p);
 }
 
 export function safeGet(key) {

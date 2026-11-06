@@ -1,14 +1,14 @@
 /* Entry point. Each section of the page lives in its own module in js/modules/.
    After changing any CSS/JS file run:  python3 tools/bump_version.py  */
-import { initTheme } from "./modules/theme.js?v=202610310105";
-import { initNav } from "./modules/nav.js?v=202610310105";
-import { initTabs } from "./modules/tabs.js?v=202610310105";
-import { initReveal } from "./modules/reveal.js?v=202610310105";
-import { initContact } from "./modules/contact.js?v=202610310105";
-import { initViewer } from "./modules/viewer.js?v=202610310105";
-import { initLinks } from "./modules/links.js?v=202610310105";
-import { initApps } from "./modules/apps.js?v=202610310105";
-import { initDocuments } from "./modules/documents.js?v=202610310105";
+import { initTheme } from "./modules/theme.js?v=202611060519";
+import { initNav } from "./modules/nav.js?v=202611060519";
+import { initTabs } from "./modules/tabs.js?v=202611060519";
+import { initReveal } from "./modules/reveal.js?v=202611060519";
+import { initContact } from "./modules/contact.js?v=202611060519";
+import { initViewer } from "./modules/viewer.js?v=202611060519";
+import { initLinks } from "./modules/links.js?v=202611060519";
+import { initApps } from "./modules/apps.js?v=202611060519";
+import { initDocuments } from "./modules/documents.js?v=202611060519";
 
 var year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();

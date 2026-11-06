@@ -1,8 +1,8 @@
 /* "Documentos y certificaciones": hidden until the visitor asks for them,
    paginated, and shown only as images (no download). Data: data/documents.json */
-import { escapeHtml, fetchJSON, formatMonth, setCount, scrollToSection } from "./utils.js?v=202610310105";
-import { paginate, renderPagination } from "./pagination.js?v=202610310105";
-import { openViewer } from "./viewer.js?v=202610310105";
+import { escapeHtml, fetchJSON, formatMonth, setCount, scrollToSection, showLoadError } from "./utils.js?v=202611060519";
+import { paginate, renderPagination } from "./pagination.js?v=202611060519";
+import { openViewer } from "./viewer.js?v=202611060519";
 
 export function initDocuments() {
   var section = document.getElementById("documentos");
@@ -17,6 +17,11 @@ export function initDocuments() {
   var visible = false;
 
   fetchJSON("data/documents.json").then(function (data) {
+    if (!data) {
+      toggle.hidden = true;
+      showLoadError(grid, "No se pudieron cargar los documentos.");
+      return;
+    }
     docs = data.filter(function (d) { return d && d.title && d.pages && d.pages.length; });
     setCount("docs", docs.length);
     update(false);
