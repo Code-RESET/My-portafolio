@@ -35,20 +35,43 @@ export function initViewer() {
   document.addEventListener("keydown", function (e) {
     if (!isOpen()) return;
     if (e.key === "Escape") closeViewer();
-    else if (e.key === "ArrowLeft") show(state.index - 1);
-    else if (e.key === "ArrowRight") show(state.index + 1);
+    else if (e.key === "ArrowLeft") show(state.index - 1, { instant: true });
+    else if (e.key === "ArrowRight") show(state.index + 1, { instant: true });
     else if (e.key === "Tab") trapFocus(e);
   });
 
-  /* Swipe on touch screens */
-  var startX = null;
-  stage.addEventListener("touchstart", function (e) { startX = e.touches[0].clientX; }, { passive: true });
-  stage.addEventListener("touchend", function (e) {
+  /* Swipe on touch screens: the image follows the finger, and a quick
+     flick is enough to change it (no need to drag far). */
+  var startX = null, startY = null, startTime = 0, dx = 0, horizontal = null;
+  stage.addEventListener("touchstart", function (e) {
+    if (startX !== null || e.touches.length > 1 || state.images.length < 2) return;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    startTime = Date.now();
+    dx = 0;
+    horizontal = null;
+  }, { passive: true });
+  stage.addEventListener("touchmove", function (e) {
     if (startX === null) return;
-    var dx = e.changedTouches[0].clientX - startX;
-    if (Math.abs(dx) > 40) show(state.index + (dx < 0 ? 1 : -1));
+    var mx = e.touches[0].clientX - startX;
+    var my = e.touches[0].clientY - startY;
+    if (horizontal === null && (Math.abs(mx) > 6 || Math.abs(my) > 6)) horizontal = Math.abs(mx) > Math.abs(my);
+    if (!horizontal) return;
+    dx = mx;
+    imgEl.classList.add("is-dragging");
+    imgEl.style.transform = "translateX(" + dx + "px)";
+  }, { passive: true });
+  function endSwipe() {
+    if (startX === null) return;
+    var velocity = Math.abs(dx) / Math.max(1, Date.now() - startTime);
+    var go = horizontal && (Math.abs(dx) > 60 || (Math.abs(dx) > 10 && velocity > 0.11));
+    imgEl.classList.remove("is-dragging");
+    imgEl.style.transform = "";
+    if (go) show(state.index + (dx < 0 ? 1 : -1), { from: dx < 0 ? 1 : -1 });
     startX = null;
-  });
+  }
+  stage.addEventListener("touchend", endSwipe);
+  stage.addEventListener("touchcancel", endSwipe);
 }
 
 export function isOpen() {
@@ -109,12 +132,36 @@ export function closeViewer() {
   if (state.lastFocused && state.lastFocused.focus) state.lastFocused.focus();
 }
 
-function show(i) {
+/* Changes the slide. Clicks and swipes get a short fade (and slide in from
+   the swipe side); keyboard arrows change instantly, since they repeat fast. */
+function show(i, opts) {
+  opts = opts || {};
   var n = state.images.length;
   if (!n) return;
   state.index = (i + n) % n;
   var image = state.images[state.index];
-  imgEl.src = image.src;
+  if (imgEl.getAttribute("src") !== image.src) {
+    var animate = !opts.instant && isOpen() &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (animate) {
+      imgEl.classList.add("is-swapping");
+      imgEl.style.transform = opts.from ? "translateX(" + (opts.from * 24) + "px)" : "scale(0.98)";
+      var reveal = function () {
+        imgEl.onload = imgEl.onerror = null;
+        void imgEl.offsetWidth; /* commit the start state before animating */
+        imgEl.classList.remove("is-swapping");
+        imgEl.style.transform = "";
+      };
+      imgEl.onload = imgEl.onerror = reveal;
+      imgEl.src = image.src;
+      if (imgEl.complete) reveal();
+    } else {
+      imgEl.onload = imgEl.onerror = null;
+      imgEl.classList.remove("is-swapping");
+      imgEl.style.transform = "";
+      imgEl.src = image.src;
+    }
+  }
   imgEl.alt = image.alt || "";
   counterEl.textContent = (state.index + 1) + " / " + n;
   thumbsEl.querySelectorAll(".viewer-thumb").forEach(function (t, k) {

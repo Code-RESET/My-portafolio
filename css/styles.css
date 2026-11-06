@@ -8,6 +8,9 @@
      RESPONSIVE (media queries al final)
    ========================================================================== */
 :root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
   --bg: #fbfbfd;
   --bg-alt: #f5f5f7;
   --surface: #ffffff;
@@ -71,7 +74,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
-  transition: background 0.4s ease, color 0.4s ease;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -143,7 +145,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: grid;
   place-items: center;
   border-radius: 50%;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 160ms var(--ease-out);
 }
 .theme-toggle:hover { background: var(--accent-soft); }
 .theme-toggle svg { width: 18px; height: 18px; }
@@ -168,7 +170,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   width: 20px;
   height: 1.5px;
   background: var(--text);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 200ms var(--ease-out), opacity 200ms ease-out;
 }
 
 /* BUTTONS */
@@ -183,7 +185,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-weight: 500;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 160ms var(--ease-out), background 0.2s ease, box-shadow 0.2s ease;
 }
 .btn:active { transform: scale(0.97); }
 .btn-primary { background: var(--accent-strong); color: #fff; }
@@ -240,9 +242,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   background: var(--surface);
   border: 1px solid var(--surface-border);
   box-shadow: var(--shadow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 200ms var(--ease-out), box-shadow 200ms ease;
 }
-.hero-tile:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 .hero-tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .hero-tile svg { width: 24px; height: 24px; color: var(--accent); margin-bottom: 6px; }
 .hero-tile strong { font-size: 15px; line-height: 1.25; }
@@ -430,9 +431,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-size: 13px;
   font-weight: 600;
   text-decoration: none;
-  transition: transform 0.2s ease;
+  transition: transform 160ms var(--ease-out);
 }
-.timeline-link:hover { transform: translateY(-2px); }
 button.timeline-link { border: 0; font-family: inherit; cursor: pointer; }
 .timeline-link svg { width: 15px; height: 15px; }
 .timeline-card ul { display: flex; flex-direction: column; gap: 8px; }
@@ -467,9 +467,8 @@ button.timeline-link { border: 0; font-family: inherit; cursor: pointer; }
   border-radius: var(--radius-md);
   padding: 32px;
   box-shadow: var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 200ms var(--ease-out), box-shadow 200ms ease;
 }
-.skill-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 .skill-icon {
   width: 48px;
   height: 48px;
@@ -518,11 +517,10 @@ button.timeline-link { border: 0; font-family: inherit; cursor: pointer; }
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 200ms var(--ease-out), box-shadow 200ms ease;
   display: flex;
   flex-direction: column;
 }
-.project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 .project-shot {
   aspect-ratio: 4/5;
   overflow: hidden;
@@ -633,9 +631,8 @@ button.project-shot:focus-visible, .page-btn:focus-visible, .viewer-nav:focus-vi
   font-weight: 600;
   cursor: pointer;
   box-shadow: var(--shadow);
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 160ms var(--ease-out), border-color 200ms ease;
 }
-.tab-pager-btn:hover { transform: translateY(-2px); border-color: var(--accent); }
 .tab-pager-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .tab-pager-btn svg { width: 20px; height: 20px; color: var(--accent); flex-shrink: 0; }
 .tab-pager-btn span { display: flex; flex-direction: column; line-height: 1.25; }
@@ -686,7 +683,7 @@ button.project-shot:focus-visible, .page-btn:focus-visible, .viewer-nav:focus-vi
   font-weight: 600;
   white-space: nowrap;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 160ms var(--ease-out);
 }
 .tab:hover { color: var(--text); }
 .tab[aria-selected="true"] { background: var(--surface); color: var(--text); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); }
@@ -728,7 +725,7 @@ button.project-shot:focus-visible, .page-btn:focus-visible, .viewer-nav:focus-vi
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 160ms var(--ease-out);
 }
 .page-btn:hover:not(:disabled) { background: var(--accent-soft); color: var(--accent); }
 .page-btn[aria-current="page"] { background: var(--accent-strong); border-color: var(--accent-strong); color: #fff; }
@@ -863,11 +860,10 @@ button.project-shot:focus-visible, .page-btn:focus-visible, .viewer-nav:focus-vi
   overflow: hidden;
   box-shadow: var(--shadow);
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 200ms var(--ease-out), box-shadow 200ms ease;
   display: flex;
   flex-direction: column;
 }
-.doc-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 .doc-thumb {
   aspect-ratio: 4/3;
   overflow: hidden;
@@ -901,10 +897,9 @@ button.project-shot:focus-visible, .page-btn:focus-visible, .viewer-nav:focus-vi
   box-shadow: var(--shadow);
   font-size: 14px;
   font-weight: 500;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 200ms var(--ease-out), box-shadow 200ms ease;
   word-break: break-word;
 }
-.contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 .contact-card svg { width: 22px; height: 22px; color: var(--accent); flex-shrink: 0; }
 .wa-grid {
   display: grid;
@@ -923,9 +918,8 @@ button.project-shot:focus-visible, .page-btn:focus-visible, .viewer-nav:focus-vi
   color: #fff;
   box-shadow: var(--shadow);
   text-decoration: none;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: transform 200ms var(--ease-out), background 200ms ease;
 }
-.wa-card:hover { transform: translateY(-4px); background: #116b33; }
 .wa-card svg { width: 24px; height: 24px; margin-bottom: 6px; }
 .wa-kicker { font-size: 12px; }
 .wa-title { font-size: 16px; font-weight: 700; }
@@ -959,9 +953,9 @@ button.project-shot:focus-visible, .page-btn:focus-visible, .viewer-nav:focus-vi
   z-index: 1000;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.25s ease;
+  transition: opacity 150ms ease-out;
 }
-.modal-backdrop.open { opacity: 1; pointer-events: all; }
+.modal-backdrop.open { opacity: 1; pointer-events: all; transition-duration: 220ms; }
 .modal {
   background: var(--surface);
   border-radius: var(--radius-lg);
@@ -973,9 +967,9 @@ button.project-shot:focus-visible, .page-btn:focus-visible, .viewer-nav:focus-vi
   position: relative;
   padding: 32px;
   transform: scale(0.96) translateY(10px);
-  transition: transform 0.25s ease;
+  transition: transform 150ms ease-out;
 }
-.modal-backdrop.open .modal { transform: scale(1) translateY(0); }
+.modal-backdrop.open .modal { transform: scale(1) translateY(0); transition: transform 260ms var(--ease-out); }
 .modal-close {
   position: absolute;
   top: 20px;
@@ -1006,7 +1000,10 @@ button.project-shot:focus-visible, .page-btn:focus-visible, .viewer-nav:focus-vi
   background: var(--bg-alt);
   overflow: hidden;
 }
+.viewer-stage { touch-action: pan-y; }
 .viewer-stage img {
+  transition: opacity 180ms ease-out, filter 180ms ease-out, transform 220ms var(--ease-out);
+  will-change: transform;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -1060,9 +1057,12 @@ button.project-shot:focus-visible, .page-btn:focus-visible, .viewer-nav:focus-vi
   background: var(--bg-alt);
   cursor: pointer;
   opacity: 0.6;
+  transition: opacity 150ms ease, border-color 150ms ease, transform 160ms var(--ease-out);
 }
 .viewer-thumb.active { border-color: var(--accent); opacity: 1; }
 .viewer-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.viewer-stage img.is-swapping { opacity: 0; filter: blur(2px); transition: none; }
+.viewer-stage img.is-dragging { transition: none; }
 .viewer-details { margin-top: 18px; }
 .viewer-details[hidden] { display: none; }
 .viewer-text { margin: 0 0 10px; font-size: 15px; line-height: 1.6; color: var(--text-soft); }
@@ -1070,13 +1070,35 @@ button.project-shot:focus-visible, .page-btn:focus-visible, .viewer-nav:focus-vi
 /* REVEAL ANIMATION */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(16px);
+  transition: opacity 500ms var(--ease-out), transform 500ms var(--ease-out);
 }
 .reveal.in-view { opacity: 1; transform: translateY(0); }
 
+/* PRESS FEEDBACK: everything you can tap answers the touch. */
+.page-btn:active:not(:disabled), .tab:active, .tab-pager-btn:active, .theme-toggle:active,
+.modal-close:active, .viewer-thumb:active, .contact-card:active, .wa-card:active,
+.timeline-link:active, .doc-card:active { transform: scale(0.97); }
+.viewer-nav:active { transform: translateY(-50%) scale(0.92); }
+.viewer-nav, .modal-close { transition: transform 160ms var(--ease-out), background 0.2s ease; }
+
+/* HOVER LIFTS only with a real mouse, so cards don't stay lifted after a tap on phones. */
+@media (hover: hover) and (pointer: fine) {
+  .hero-tile:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+  .timeline-link:hover { transform: translateY(-2px); }
+  .skill-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .tab-pager-btn:hover { transform: translateY(-2px); border-color: var(--accent); }
+  .doc-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .wa-card:hover { transform: translateY(-4px); background: #116b33; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .modal, .modal-backdrop.open .modal { transform: none; }
+  .viewer-stage img { transition: opacity 150ms ease; }
+  .nav-links { transition: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .hero-blob { animation: none; }
   .scroll-cue { animation: none; }
@@ -1107,9 +1129,9 @@ button.project-shot:focus-visible, .page-btn:focus-visible, .viewer-nav:focus-vi
     gap: 18px;
     border-bottom: 1px solid var(--surface-border);
     transform: translateY(-130%);
-    transition: transform 0.3s ease;
+    transition: transform 200ms ease-out;
   }
-  .nav-links.open { transform: translateY(0); }
+  .nav-links.open { transform: translateY(0); transition: transform 280ms var(--ease-drawer); }
   .nav-toggle { display: flex; }
 }
 
