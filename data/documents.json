@@ -55,6 +55,17 @@
     "thumb": "assets/thumbs/microcredencial-chatgpt-tecmilenio.jpg"
   },
   {
+    "id": "coursera-microsoft-cybersecurity-privacy",
+    "title": "Cybersecurity and Privacy",
+    "issuer": "Microsoft · Coursera",
+    "date": "2026-11-09",
+    "category": "curso",
+    "pages": [
+      "assets/docs-view/coursera-microsoft-cybersecurity-privacy-1.jpg"
+    ],
+    "thumb": "assets/thumbs/coursera-microsoft-cybersecurity-privacy.jpg"
+  },
+  {
     "id": "santander-internet-de-las-cosas",
     "title": "Internet de las Cosas (8 horas)",
     "issuer": "Santander Open Academy · MIT Professional Education",
