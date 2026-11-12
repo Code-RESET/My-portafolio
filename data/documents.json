@@ -17,6 +17,7 @@
     "issuer": "Dassault Systèmes · Examen académico en UAL",
     "date": "2025-11-27",
     "category": "certificacion",
+    "verify": "https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-AUXWCJGQ3T",
     "pages": [
       "assets/docs-view/solidworks-cad-design-associate-1.jpg"
     ],
@@ -50,6 +51,7 @@
     "issuer": "Skilling Center Tecmilenio",
     "date": "2026-02-03",
     "category": "curso",
+    "verify": "https://www.credly.com/badges/4653a571-5a4c-4ad1-9916-687b2c087888",
     "pages": [
       "assets/docs-view/certificado-excel-tecmilenio-1.jpg"
     ],
@@ -61,6 +63,7 @@
     "issuer": "Skilling Center Tecmilenio",
     "date": "2026-05-12",
     "category": "curso",
+    "verify": "https://www.credly.com/go/qnLLeut9",
     "pages": [
       "assets/docs-view/microcredencial-chatgpt-tecmilenio-1.jpg"
     ],
