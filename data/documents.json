@@ -1,5 +1,17 @@
 [
   {
+    "id": "coursera-cybersecurity-privacy",
+    "title": "Cybersecurity and Privacy",
+    "issuer": "Microsoft · Coursera",
+    "date": "2026-11-09",
+    "category": "curso",
+    "verify": "https://coursera.org/verify/31B9AFS5NMMH",
+    "pages": [
+      "assets/docs-view/coursera-cybersecurity-privacy-1.jpg"
+    ],
+    "thumb": "assets/thumbs/coursera-cybersecurity-privacy.jpg"
+  },
+  {
     "id": "solidworks-cad-design-associate",
     "title": "SOLIDWORKS CAD Design Associate",
     "issuer": "Dassault Systèmes · Examen académico en UAL",

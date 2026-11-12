@@ -1,8 +1,8 @@
 /* "Documentos y certificaciones": hidden until the visitor asks for them,
    paginated, and shown only as images (no download). Data: data/documents.json */
-import { escapeHtml, fetchJSON, formatMonth, setCount, scrollToSection, showLoadError } from "./utils.js?v=202611061939";
-import { paginate, renderPagination } from "./pagination.js?v=202611061939";
-import { openViewer } from "./viewer.js?v=202611061939";
+import { escapeHtml, fetchJSON, formatMonth, setCount, scrollToSection, showLoadError } from "./utils.js?v=202611120410";
+import { paginate, renderPagination } from "./pagination.js?v=202611120410";
+import { openViewer } from "./viewer.js?v=202611120410";
 
 export function initDocuments() {
   var section = document.getElementById("documentos");
@@ -72,9 +72,18 @@ export function initDocuments() {
       images: doc.pages.map(function (src, i) {
         return { src: src, alt: doc.title + (doc.pages.length > 1 ? " — página " + (i + 1) : "") };
       }),
+      details: verifyLink(doc.verify),
       viewOnly: true
     });
   }
+}
+
+/* Only https links can become the "Verificar" button. */
+function verifyLink(url) {
+  if (!/^https:\/\//.test(url || "")) return "";
+  return '<a class="timeline-link is-external" href="' + escapeHtml(url) + '" target="_blank" rel="noopener">' +
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg>' +
+    "Verificar en el sitio del emisor</a>";
 }
 
 function cardHtml(doc) {
