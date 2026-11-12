@@ -789,7 +789,7 @@ button.project-shot:focus-visible, .page-btn:focus-visible, .viewer-nav:focus-vi
   font-weight: 700;
 }
 .complementary-note { margin: 18px 0 0; font-size: 14px; color: var(--text-soft); }
-.complementary-note a { color: var(--accent); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+.complementary-list a, .complementary-note a { color: var(--accent); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
 .complementary-list li.in-progress::before {
   content: "○";
   color: var(--text-soft);
