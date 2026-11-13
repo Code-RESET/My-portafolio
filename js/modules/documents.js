@@ -1,8 +1,8 @@
 /* "Documentos y certificaciones": hidden until the visitor asks for them,
    paginated, and shown only as images (no download). Data: data/documents.json */
-import { escapeHtml, fetchJSON, formatMonth, setCount, scrollToSection, showLoadError } from "./utils.js?v=202611120410";
-import { paginate, renderPagination } from "./pagination.js?v=202611120410";
-import { openViewer } from "./viewer.js?v=202611120410";
+import { escapeHtml, fetchJSON, formatMonth, setCount, scrollToSection, showLoadError } from "./utils.js?v=202611130515";
+import { paginate, renderPagination } from "./pagination.js?v=202611130515";
+import { openViewer } from "./viewer.js?v=202611130515";
 
 export function initDocuments() {
   var section = document.getElementById("documentos");
@@ -16,6 +16,9 @@ export function initDocuments() {
   var page = 1;
   var visible = false;
 
+  /* Until the list arrives, the button can't show anything. */
+  toggle.disabled = true;
+
   fetchJSON("data/documents.json").then(function (data) {
     if (!data) {
       toggle.hidden = true;
@@ -23,6 +26,7 @@ export function initDocuments() {
       return;
     }
     docs = data.filter(function (d) { return d && d.title && d.pages && d.pages.length; });
+    toggle.disabled = false;
     setCount("docs", docs.length);
     update(false);
   });

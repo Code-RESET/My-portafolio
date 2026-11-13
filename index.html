@@ -4,25 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luis Ángel Díaz Bernal — Portafolio profesional</title>
-<meta name="description" content="Soy Ingeniero Mecatrónico en la Región Laguna: electrónica automotriz, seguridad y rastreo GPS, domótica y aplicaciones para negocios. Más de 10 años y más de 100 instalaciones.">
+<meta name="description" content="Ingeniero Mecatrónico en la Región Laguna: electrónica automotriz, alarmas y GPS, domótica y apps para negocios. Más de 10 años y 100+ instalaciones.">
 <link rel="canonical" href="https://code-reset.github.io/My-portafolio/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://code-reset.github.io/My-portafolio/">
 <meta property="og:title" content="Luis Ángel Díaz Bernal — Portafolio profesional">
-<meta property="og:description" content="Soy Ingeniero Mecatrónico en la Región Laguna: electrónica automotriz, seguridad y rastreo GPS, domótica y aplicaciones para negocios. Más de 10 años y más de 100 instalaciones.">
+<meta property="og:description" content="Ingeniero Mecatrónico en la Región Laguna: electrónica automotriz, alarmas y GPS, domótica y apps para negocios. Más de 10 años y 100+ instalaciones.">
 <meta property="og:image" content="https://code-reset.github.io/My-portafolio/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Luis Ángel Díaz Bernal, Ingeniero Mecatrónico: electrónica automotriz, domótica y apps para negocios">
+<meta property="og:site_name" content="Luis Ángel Díaz Bernal">
 <meta property="og:locale" content="es_MX">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Luis Ángel Díaz Bernal — Portafolio profesional">
-<meta name="twitter:description" content="Soy Ingeniero Mecatrónico en la Región Laguna: electrónica automotriz, seguridad y rastreo GPS, domótica y aplicaciones para negocios. Más de 10 años y más de 100 instalaciones.">
+<meta name="twitter:description" content="Ingeniero Mecatrónico en la Región Laguna: electrónica automotriz, alarmas y GPS, domótica y apps para negocios. Más de 10 años y 100+ instalaciones.">
 <meta name="twitter:image" content="https://code-reset.github.io/My-portafolio/assets/og-image.jpg">
 
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="css/styles.css?v=202611120410">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<script>
+/* Antes de pintar: marca que hay JavaScript (para las animaciones) y aplica
+   el tema guardado, así la página no parpadea ni queda en blanco sin JS. */
+(function (r) {
+  r.classList.add("js");
+  try { var t = localStorage.getItem("ldb_portfolio_theme"); if (t) r.setAttribute("data-theme", t); } catch (e) {}
+})(document.documentElement);
+</script>
+<link rel="stylesheet" href="css/styles.css?v=202611130515">
 
 <script type="application/ld+json">
 {
@@ -48,8 +61,8 @@
 
 <nav id="navbar" class="navbar">
   <div class="navbar-inner">
-    <a href="#top" class="nav-logo" aria-label="Inicio">Luis Ángel Díaz Bernal</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+    <a href="#top" class="nav-logo">Luis Ángel Díaz Bernal</a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
@@ -58,7 +71,7 @@
       <li><a href="#perfil">Sobre mí</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-    <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Activar modo oscuro">
       <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.4 4.4l1.7 1.7M17.9 17.9l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.4 19.6l1.7-1.7M17.9 6.1l1.7-1.7"/></svg>
       <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
     </button>
@@ -199,7 +212,7 @@
       <div class="tabpanel" role="tabpanel" id="proyectos" aria-labelledby="tab-proyectos" tabindex="0">
         <p class="section-text reveal">Estas son apps que hice para clientes y para mis propios negocios. Funcionan en el navegador y varias se instalan en el celular. En las capturas no se ven datos de mis clientes.</p>
 
-        <div class="projects-grid" id="appsGrid" data-page-size="6" aria-live="polite"></div>
+        <div class="projects-grid" id="appsGrid" data-page-size="6"></div>
         <nav class="pagination" id="appsPagination" hidden></nav>
         <noscript><p class="section-text">Activa JavaScript para ver las aplicaciones.</p></noscript>
       </div>
@@ -433,7 +446,7 @@
       <div class="tabpanel" role="tabpanel" id="documentos" aria-labelledby="tab-documentos" tabindex="0">
         <p class="section-text reveal">Aquí están mis certificados y constancias escaneados. Son copias para consulta: tapé datos personales, firmas y folios, y llevan marca de agua.</p>
 
-        <div class="doc-more-wrap doc-toggle-wrap reveal">
+        <div class="doc-toggle-wrap reveal">
           <button type="button" class="btn btn-primary" id="docMore" aria-expanded="false" aria-controls="docGrid">Ver mis <span data-count="docs">15</span> documentos</button>
         </div>
         <div class="doc-grid" id="docGrid" data-page-size="8" hidden></div>
@@ -518,6 +531,6 @@
   </div>
 </div>
 
-<script type="module" src="js/main.js?v=202611120410"></script>
+<script type="module" src="js/main.js?v=202611130515"></script>
 </body>
 </html>

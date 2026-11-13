@@ -3,7 +3,7 @@
    paginate(items, page, size)  -> { items, page, pages }
    renderPagination(nav, { page, pages, label, onChange })
 */
-import { escapeHtml } from "./utils.js?v=202611120410";
+import { escapeHtml } from "./utils.js?v=202611130515";
 
 export function paginate(items, page, size) {
   var pages = Math.max(1, Math.ceil(items.length / size));
@@ -14,9 +14,21 @@ export function paginate(items, page, size) {
 
 export function renderPagination(nav, opts) {
   if (!nav) return;
+  /* One status line that stays in the page, so screen readers announce
+     "Página 2 de 3" each time it changes (a freshly inserted live region
+     usually isn't read). */
+  var status = nav.querySelector(".page-status");
+  if (!status) {
+    status = document.createElement("span");
+    status.className = "page-status";
+    status.setAttribute("aria-live", "polite");
+  }
+  nav.querySelectorAll(".page-btn").forEach(function (btn) { btn.remove(); });
+
   if (opts.pages <= 1) {
     nav.hidden = true;
-    nav.innerHTML = "";
+    status.textContent = "";
+    if (!status.parentNode) nav.appendChild(status);
     return;
   }
   nav.hidden = false;
@@ -31,14 +43,22 @@ export function renderPagination(nav, opts) {
   }
   html += '<button type="button" class="page-btn page-next" data-page="' + (opts.page + 1) + '"' +
     (opts.page === opts.pages ? " disabled" : "") + ' aria-label="Página siguiente">›</button>';
-  html += '<span class="page-status" aria-live="polite">Página ' + escapeHtml(opts.page) +
-    " de " + escapeHtml(opts.pages) + "</span>";
-  nav.innerHTML = html;
+  nav.insertAdjacentHTML("afterbegin", html);
+  status.textContent = "Página " + escapeHtml(opts.page) + " de " + escapeHtml(opts.pages);
+  nav.appendChild(status);
 
   nav.querySelectorAll(".page-btn").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var target = parseInt(btn.dataset.page, 10);
-      if (target >= 1 && target <= opts.pages && target !== opts.page) opts.onChange(target);
+      if (!(target >= 1 && target <= opts.pages && target !== opts.page)) return;
+      var kind = btn.classList.contains("page-prev") ? ".page-prev"
+        : btn.classList.contains("page-next") ? ".page-next" : null;
+      opts.onChange(target);
+      /* The buttons were rebuilt: keep the keyboard focus where it was
+         (same arrow if it still works, otherwise the current page). */
+      var again = kind && nav.querySelector(kind + ":not(:disabled)");
+      var focusTo = again || nav.querySelector('.page-btn[aria-current="page"]');
+      if (focusTo) focusTo.focus({ preventScroll: true });
     });
   });
 }

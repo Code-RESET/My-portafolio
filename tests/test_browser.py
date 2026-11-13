@@ -122,6 +122,51 @@ def test_mobile_menu(open_page):
     assert page.get_attribute("#navToggle", "aria-expanded") == "false"
 
 
+def test_closed_mobile_menu_is_not_focusable_and_closes_outside(open_page):
+    page = open_page(390)
+    page.wait_for_timeout(300)
+    assert not page.locator('#navLinks a[href="#contacto"]').is_visible()
+    page.click("#navToggle")
+    page.wait_for_timeout(350)
+    assert page.locator('#navLinks a[href="#contacto"]').is_visible()
+    page.mouse.click(200, 600)
+    page.wait_for_timeout(100)
+    assert page.get_attribute("#navToggle", "aria-expanded") == "false"
+
+
+def test_content_visible_without_javascript(browser, base_url):
+    """If a script fails to load, the page must not stay blank."""
+    ctx = browser.new_context(java_script_enabled=False, viewport={"width": 1440, "height": 900})
+    try:
+        page = ctx.new_page()
+        page.goto(base_url, wait_until="load")
+        assert page.evaluate("getComputedStyle(document.querySelector('.hero-content')).opacity") == "1"
+    finally:
+        ctx.close()
+
+
+def test_saved_dark_theme_applies_before_scripts(browser, base_url):
+    ctx = browser.new_context(color_scheme="light")
+    try:
+        ctx.add_init_script("localStorage.setItem('ldb_portfolio_theme', 'dark')")
+        page = ctx.new_page()
+        page.goto(base_url, wait_until="commit")
+        page.wait_for_selector("body", state="attached")
+        assert page.get_attribute("html", "data-theme") == "dark"
+    finally:
+        ctx.close()
+
+
+def test_pagination_keeps_keyboard_focus(open_page):
+    page = open_page()
+    page.click("#tab-proyectos")
+    if page.locator("#appsPagination").is_hidden():
+        pytest.skip("una sola página de apps")
+    page.focus("#appsPagination .page-next")
+    page.keyboard.press("Enter")
+    assert page.evaluate("document.activeElement.closest('#appsPagination') !== null")
+
+
 def test_theme_toggle(open_page):
     page = open_page(scheme="light")
     page.click("#themeToggle")

@@ -124,6 +124,18 @@ def test_cache_version_is_consistent(root):
     assert len(versions) == 1, f"Versiones distintas: {versions}. Ejecuta tools/bump_version.py"
 
 
+def test_every_import_has_cache_version(root):
+    """A new import without ?v= would keep an old copy on phones."""
+    missing = []
+    for f in [root / "index.html"] + list((root / "js").rglob("*.js")):
+        text = f.read_text(encoding="utf-8")
+        pattern = r"""(?:import\s[^"']*from\s|<script[^>]*src=|<link[^>]*stylesheet[^>]*href=)["']([^"']+\.(?:js|css)[^"']*)["']"""
+        for ref in re.findall(pattern, text):
+            if "?v=" not in ref and not ref.startswith("http"):
+                missing.append(f"{f.relative_to(root)}: {ref}")
+    assert not missing, f"Falta ?v= (agrégalo y corre tools/bump_version.py): {missing}"
+
+
 def test_only_cv_is_downloadable(root, html):
     pdfs = sorted(p.name for p in (root / "assets/documents").glob("*.pdf"))
     assert pdfs == ["luis-diaz-bernal-cv.pdf"], f"PDF publicados además del CV: {pdfs}"

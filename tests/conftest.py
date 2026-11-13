@@ -7,6 +7,7 @@ Run all tests from the repository root:
 If Playwright cannot find Chromium, point CHROMIUM_PATH at the executable.
 """
 import functools
+import glob
 import http.server
 import os
 import pathlib
@@ -15,7 +16,19 @@ import threading
 import pytest
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-DEFAULT_CHROMIUM = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome"
+# Chromium copies that may already be on the machine (any version), used
+# when the installed Playwright has no browser of its own.
+CHROMIUM_GLOBS = ("/opt/pw-browsers/chromium*/chrome-linux*/chrome",)
+
+
+def find_chromium():
+    if os.environ.get("CHROMIUM_PATH"):
+        return os.environ["CHROMIUM_PATH"]
+    for pattern in CHROMIUM_GLOBS:
+        found = sorted(glob.glob(pattern))
+        if found:
+            return found[-1]
+    return None
 
 
 class QuietHandler(http.server.SimpleHTTPRequestHandler):
@@ -46,9 +59,16 @@ def base_url():
 @pytest.fixture(scope="session")
 def browser():
     sync_api = pytest.importorskip("playwright.sync_api")
-    path = os.environ.get("CHROMIUM_PATH") or (DEFAULT_CHROMIUM if os.path.exists(DEFAULT_CHROMIUM) else None)
     with sync_api.sync_playwright() as p:
-        b = p.chromium.launch(executable_path=path) if path else p.chromium.launch()
+        try:
+            if os.environ.get("CHROMIUM_PATH"):
+                raise RuntimeError("use CHROMIUM_PATH")
+            b = p.chromium.launch()
+        except Exception:
+            path = find_chromium()
+            if not path:
+                raise
+            b = p.chromium.launch(executable_path=path)
         yield b
         b.close()
 

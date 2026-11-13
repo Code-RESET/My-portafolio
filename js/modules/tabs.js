@@ -8,6 +8,8 @@ export function initTabs() {
   document.querySelectorAll("[data-tabs]").forEach(setup);
 
   document.addEventListener("click", function (e) {
+    /* Ctrl/Cmd/Shift/middle click keep their normal meaning (new tab, etc.). */
+    if (e.defaultPrevented || e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
     var link = e.target.closest && e.target.closest('a[href^="#"]');
     if (!link) return;
     var id = decodeURIComponent(link.getAttribute("href").slice(1));
@@ -98,9 +100,8 @@ function addPagers(container, tabs) {
     if (!panel) return;
     var prev = tabs[i - 1];
     var next = tabs[i + 1];
-    var nav = document.createElement("nav");
+    var nav = document.createElement("div");
     nav.className = "tab-pager";
-    nav.setAttribute("aria-label", "Más secciones");
     nav.innerHTML =
       (prev ? '<button type="button" class="tab-pager-btn tab-pager-prev">' + ARROW_LEFT +
         '<span><small>Anterior</small>' + label(prev) + "</span></button>" : "<span></span>") +

@@ -27,11 +27,13 @@ js/modules/
   viewer.js             Visor de imágenes: vista previa de apps y documentos.
   apps.js               Sección "Aplicaciones desarrolladas" (lee data/apps.json).
   documents.js          Sección "Documentos" (lee data/documents.json).
+  links.js              Marca los enlaces a otros sitios y abre las capturas de chat en el visor.
 data/apps.json          Lista de aplicaciones.
 data/documents.json     Lista de documentos.
 assets/projects/        Capturas de apps e instalaciones.
 assets/docs-view/       Imagen de cada página de los documentos (lo que muestra el visor).
-assets/thumbs/          Miniaturas de los documentos.
+assets/thumbs/          Miniaturas de los documentos (640 px de ancho).
+assets/testimonios/     Capturas de las conversaciones de los testimonios.
 assets/documents/       Solo el CV en PDF, que es lo único descargable.
 tools/bump_version.py   Cambia el número de versión para que los celulares no usen archivos viejos.
 tests/                  Pruebas automáticas.
@@ -63,7 +65,7 @@ La cantidad de apps por página se cambia en `index.html`, en `data-page-size` d
 ## Agregar un documento
 
 1. Convierte cada página a JPG (unos 1400 px en el lado largo) en `assets/docs-view/nombre-1.jpg`, `nombre-2.jpg`…
-2. Guarda una miniatura en `assets/thumbs/nombre.jpg`.
+2. Guarda una miniatura de 640 px de ancho en `assets/thumbs/nombre.jpg`, ya con datos tapados y marca de agua.
 3. Agrega una entrada en `data/documents.json` con `id`, `title`, `issuer`, `date` (AAAA-MM-DD), `category`, `pages` y `thumb`.
 4. Cambia el número en `index.html` donde dice `data-count="docs"`.
 
@@ -77,7 +79,7 @@ pip install pytest playwright      # solo la primera vez
 python3 -m pytest tests -q         # deben pasar todas
 ```
 
-Las pruebas revisan, entre otras cosas: que no haya errores en la consola, que todas las imágenes y enlaces existan, que no haya scroll horizontal en 7 anchos de pantalla, la paginación, la vista previa de cada app, que los documentos no se puedan descargar, que los contadores coincidan con los datos, que no aparezcan CURP, RFC ni usuarios admin, y que no haya archivos sin usar. Si Playwright no encuentra Chromium, indica la ruta con la variable `CHROMIUM_PATH`.
+Las pruebas revisan, entre otras cosas: que no haya errores en la consola, que todas las imágenes y enlaces existan, que no haya scroll horizontal en 7 anchos de pantalla, la paginación, la vista previa de cada app, que los documentos no se puedan descargar, que los contadores coincidan con los datos, que no aparezcan CURP, RFC ni usuarios admin, que no haya archivos sin usar, que el contenido se vea aunque falle el JavaScript, que el menú cerrado del celular no reciba el foco y que cada import lleve `?v=`. Si Playwright no encuentra su Chromium, las pruebas buscan uno instalado en `/opt/pw-browsers`; también puedes indicar la ruta con la variable `CHROMIUM_PATH`.
 
 Para ver el sitio en tu computadora:
 
