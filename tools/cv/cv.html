@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>CV — Luis Ángel Díaz Bernal</title>
+<!--
+  Fuente del CV. Para editarlo: cambia este archivo y corre
+    python3 tools/build_cv.py
+  Eso genera assets/documents/luis-diaz-bernal-cv.pdf
+-->
+<style>
+  @page { size: Letter; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Liberation Sans", Arial, Helvetica, sans-serif; color: #222; font-size: 7.6pt; line-height: 1.38; }
+  .page { width: 8.5in; min-height: 11in; padding: 0.45in 0.75in 0.4in; page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+  h1 { font-size: 16.5pt; font-weight: 700; color: #111; margin-bottom: 4pt; }
+  .headline { color: #0a66c2; font-weight: 700; font-size: 8pt; margin-bottom: 8pt; }
+  .contact { display: flex; flex-wrap: wrap; gap: 0 12pt; font-size: 6.8pt; color: #444; margin-bottom: 6pt; }
+  h2 { color: #0a66c2; font-size: 8.4pt; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+       border-bottom: 0.6pt solid #ccc; padding-bottom: 5pt; margin: 9pt 0 6pt; }
+  .item { margin-bottom: 6pt; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; }
+  .role { font-weight: 700; color: #111; font-size: 7.8pt; }
+  .date { color: #0a66c2; font-weight: 700; font-size: 6.6pt; }
+  .org { color: #555; font-size: 6.8pt; margin: 2pt 0 3pt; }
+  ul { padding-left: 10pt; }
+  li { margin-bottom: 1.5pt; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt; }
+  .certs li { margin-bottom: 2.5pt; }
+  .skill { margin-bottom: 8pt; }
+  .skill b { display: block; color: #111; font-size: 7.8pt; margin-bottom: 3pt; }
+  .app { margin-bottom: 9pt; }
+  .app b { display: block; color: #111; font-size: 7.8pt; }
+  .app .tag { color: #0a66c2; font-weight: 700; font-size: 6.4pt; text-transform: uppercase; letter-spacing: .02em; margin: 2pt 0; }
+  .app .stack { color: #555; font-size: 6.8pt; }
+  .foot { text-align: center; color: #777; font-size: 6.4pt; margin-top: 12pt; }
+</style>
+</head>
+<body>
+
+<section class="page">
+  <h1>Luis Ángel Díaz Bernal</h1>
+  <p class="headline">Ingeniero Mecatrónico · Integración de Sistemas, Electrónica y Desarrollo de Soluciones Tecnológicas</p>
+  <p class="contact">
+    <span>📞 871 231 8050</span>
+    <span>✉️ anngeldb@gmail.com</span>
+    <span>🔗 linkedin.com/in/luis-ángel-díaz-bernal-34109314a</span>
+    <span>📍 Región Laguna, Coahuila, México</span>
+  </p>
+
+  <h2>Sobre mí</h2>
+  <p>Soy ingeniero en Mecatrónica. Me dedico a la seguridad automotriz desde 2009 y llevo más de 100 instalaciones de alarmas y GPS, con muy pocas garantías y casi ninguna falla que se repita. Hoy tengo tres negocios: Alarmas y GPS RESET, donde instalo alarmas, GPS e iluminación LED; Tu Casa Inteligente, donde automatizo casas; y code-RESET, donde hago apps y páginas web a la medida.</p>
+
+  <h2>Experiencia laboral</h2>
+  <div class="item">
+    <div class="row"><span class="role">Fundador · Desarrollador</span><span class="date">Actualidad</span></div>
+    <p class="org">code-RESET</p>
+    <ul>
+      <li>Hago aplicaciones y páginas web a la medida para negocios.</li>
+      <li>Llevo 10 apps: finanzas personales, presupuesto y deudas, créditos y cobranza, un taller automotriz, órdenes de servicio, ventas en abonos, ingresos de una pizzería, la gestión de mis propios proyectos, una app para estudiar para un examen y otra para preparar un concurso de preguntas.</li>
+    </ul>
+  </div>
+  <div class="item">
+    <div class="row"><span class="role">Dueño · Ventas · Instalador</span><span class="date">2019 — Actualidad</span></div>
+    <p class="org">Alarmas y GPS RESET · Solo LED Auto · code-reset.github.io/Site</p>
+    <ul>
+      <li>Fundé el negocio en 2019. Instalo alarmas, GPS y sistemas de seguridad para vehículos.</li>
+      <li>Tengo dos líneas de iluminación LED: Solo LED Auto, para vehículos, y Minera LED Solutions, para minería.</li>
+      <li>Me encargo de todo: vendo, instalo, doy soporte y atiendo a los clientes.</li>
+      <li>Instalo GPS para que las empresas sepan dónde están sus vehículos.</li>
+      <li>Entre este negocio y Alarmas Resser llevo más de 100 instalaciones, con muy pocas garantías y fallas reportadas.</li>
+    </ul>
+  </div>
+  <div class="item">
+    <div class="row"><span class="role">Fundador</span><span class="date">Actualidad</span></div>
+    <p class="org">Tu Casa Inteligente</p>
+    <ul>
+      <li>Automatizo casas para controlar luces, clima y seguridad.</li>
+      <li>Diseño e instalo cada sistema, desde la parte eléctrica hasta la electrónica.</li>
+      <li>Enero 2026: automaticé una casa completa (cocina, escalera, recámara, patio, cochera y clima); el cliente la controla desde el celular o con Alexa.</li>
+    </ul>
+  </div>
+  <div class="item">
+    <div class="row"><span class="role">Líder Técnico en Sistemas de Seguridad Automotriz</span><span class="date">2009 — 2019</span></div>
+    <p class="org">Alarmas Resser de la Laguna</p>
+    <ul>
+      <li>Coordinaba al equipo de técnicos que instalaba alarmas y GPS.</li>
+      <li>Programaba módulos electrónicos y encontraba y reparaba fallas.</li>
+      <li>Mejoré la forma en que hacíamos las instalaciones y el servicio.</li>
+    </ul>
+  </div>
+
+  <h2>Educación</h2>
+  <div class="item">
+    <div class="row"><span class="role">Ingeniería en Mecatrónica</span><span class="date">2022 — 2025</span></div>
+    <p class="org">Universidad Autónoma de la Laguna (UAL)</p>
+    <p>Titulado, con cédula profesional. En mi tesis, «Propuesta e Implementación de Inmótica en la Facultad de Ingenierías», diseñé un sistema que automatiza la iluminación, el clima y la seguridad de la facultad para ahorrar energía.</p>
+  </div>
+  <div class="item">
+    <div class="row"><span class="role">Bachillerato Tecnológico</span><span class="date">2003 — 2006</span></div>
+    <p class="org">Área Físico-Matemáticas · Carrera: Computación</p>
+    <p>Ahí aprendí lo básico de programación, sistemas operativos, bases de datos y redes.</p>
+  </div>
+
+  <h2>Certificaciones y cursos</h2>
+  <div class="cols certs">
+    <ul>
+      <li>AI Automation with Claude — Anthropic · Advancing Women in Tech · Coursera (2026)</li>
+      <li>Cybersecurity and Privacy — Microsoft · Coursera (2026)</li>
+      <li>SOLIDWORKS CAD Design Associate — Dassault Systèmes (2025)</li>
+      <li>Moldes e Infusión de Fibra de Carbono — H. Carbón (2025)</li>
+      <li>Excel (100 horas) — Skilling Center Tecmilenio (2026)</li>
+      <li>Microcredencial ChatGPT — Skilling Center Tecmilenio (2026)</li>
+    </ul>
+    <ul>
+      <li>Reparación de Laptop (36 horas) — I.A.C.O. (2026)</li>
+      <li>Electrónica Básica Automotriz (50 horas) — SEP · CECATI 20 (2019)</li>
+      <li>Circuitos Electrónicos Fundamentales (300 horas) — SEP · CECATI 088 (2009)</li>
+      <li>Santander Open Academy (2025–2026): Internet de las Cosas (MIT Professional Education), Copilot, Prompting responsable (Microsoft &amp; Founderz) e IA, automatización y bots</li>
+    </ul>
+  </div>
+</section>
+
+<section class="page">
+  <h2 style="margin-top:0">Habilidades técnicas</h2>
+  <div class="cols">
+    <div class="skill"><b>Seguridad automotriz &amp; GPS</b>Alarmas, rastreo satelital GPS, inmovilizadores, sistemas por transpondedor e iluminación LED automotriz.</div>
+    <div class="skill"><b>Automatización &amp; Domótica</b>Programo dispositivos y sensores para controlar luces, clima y seguridad en casas.</div>
+    <div class="skill"><b>Desarrollo Web &amp; Software</b>Hago apps y páginas web con code-RESET: con usuarios y contraseña, datos en la nube y que se pueden instalar en el celular.</div>
+    <div class="skill"><b>Electricidad &amp; Electrónica</b>Diagnóstico y reparación, media y baja tensión, integración de módulos electrónicos, PLC.</div>
+    <div class="skill"><b>Software &amp; Herramientas</b>SolidWorks (tengo la certificación CAD Design Associate), Python básico, VBA, Office 365 y protocolos de comunicación.</div>
+    <div class="skill"><b>Ventas &amp; Negociación</b>En mis negocios yo atiendo al cliente, cotizo y cierro la venta.</div>
+  </div>
+  <p><b>Idiomas:</b> inglés básico (en aprendizaje).</p>
+
+  <h2>Aplicaciones desarrolladas (code-RESET)</h2>
+  <div class="cols">
+    <div class="app"><b>Finanzas Reset</b><p class="tag">App de finanzas personales</p><p class="stack">App web · Exportación a Excel</p></div>
+    <div class="app"><b>Code Reset — Panel de gestión</b><p class="tag">Gestión interna de proyectos y pagos</p><p class="stack">App web · Gestión de proyectos</p></div>
+    <div class="app"><b>Medicar</b><p class="tag">App privada de control financiero</p><p class="stack">Firebase Auth · Firestore · PWA</p></div>
+    <div class="app"><b>Hernández Autoclimas</b><p class="tag">Sistema administrativo para taller automotriz</p><p class="stack">Órdenes, garantías y cotizaciones en PDF · 16 servicios entregados</p></div>
+    <div class="app"><b>RESET — Control de Órdenes v3.0</b><p class="tag">Herramienta interna de gestión</p><p class="stack">Firebase · Firestore · Microsoft 365</p></div>
+    <div class="app"><b>HD Crédit v2.1</b><p class="tag">Control de cobros y cartera de crédito</p><p class="stack">Firebase · Excel · CSV</p></div>
+    <div class="app"><b>Nene's Shopping USA</b><p class="tag">Control de cuentas y cuotas</p><p class="stack">App web · Acceso protegido</p></div>
+    <div class="app"><b>Pizzas David's</b><p class="tag">Control de ingresos con roles</p><p class="stack">PWA instalable · Roles de acceso</p></div>
+    <div class="app"><b>RSTI — App de estudio</b><p class="tag">Preparación para examen</p><p class="stack">Quiz · Flashcards · Simulacro con tiempo</p></div>
+    <div class="app"><b>Lobitos</b><p class="tag">App para el concurso LoboSabio</p><p class="stack">Concurso contra reloj · Modo estudio · 70 preguntas</p></div>
+  </div>
+
+  <p class="foot">16 documentos verificables disponibles en el portafolio — code-reset.github.io/My-portafolio</p>
+</section>
+
+</body>
+</html>

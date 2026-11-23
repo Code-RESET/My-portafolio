@@ -33,6 +33,7 @@ assets/projects/        Capturas de apps e instalaciones.
 assets/docs-view/       Imagen de cada página de los documentos (lo que muestra el visor).
 assets/thumbs/          Miniaturas de los documentos.
 assets/documents/       Solo el CV en PDF, que es lo único descargable.
+tools/cv/cv.html       Fuente del CV. Se edita aquí y se genera el PDF con tools/build_cv.py.
 tools/bump_version.py   Cambia el número de versión para que los celulares no usen archivos viejos.
 tests/                  Pruebas automáticas.
 ```
@@ -68,6 +69,12 @@ La cantidad de apps por página se cambia en `index.html`, en `data-page-size` d
 4. Cambia el número en `index.html` donde dice `data-count="docs"`.
 
 Los documentos están ocultos hasta que el visitante pulsa "Ver documentos" y solo se muestran como imágenes, sin botón de descarga. No se publican los PDF originales.
+
+## Cambiar el CV
+
+1. Edita `tools/cv/cv.html`.
+2. Corre `python3 tools/build_cv.py`: genera `assets/documents/luis-diaz-bernal-cv.pdf`.
+3. Abre el PDF y revisa que siga en 2 páginas.
 
 ## Antes de publicar
 
