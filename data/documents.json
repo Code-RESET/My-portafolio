@@ -1,5 +1,17 @@
 [
   {
+    "id": "coursera-ai-automation-claude",
+    "title": "AI Automation with Claude",
+    "issuer": "Anthropic · Advancing Women in Tech · Coursera",
+    "date": "2026-11-23",
+    "category": "curso",
+    "verify": "https://coursera.org/verify/AV2MTE7XZX2M",
+    "pages": [
+      "assets/docs-view/coursera-ai-automation-claude-1.jpg"
+    ],
+    "thumb": "assets/thumbs/coursera-ai-automation-claude.jpg"
+  },
+  {
     "id": "coursera-cybersecurity-privacy",
     "title": "Cybersecurity and Privacy",
     "issuer": "Microsoft · Coursera",
